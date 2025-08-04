@@ -193,21 +193,6 @@ h6 {
   gap: 10px;
 }
 
-/*
-.social-icons a {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 40px;
-  height: 40px;
-  background-color: var(--primary-color); 
-  /*linear-gradient(to right, #e52e71, #f06d06, rgb(255, 255, 0), green);*/
-  color: white;
-  border-radius: 50%;
-  text-decoration: none;
-  transition: all 0.3s ease;
-}
-*/
 
 .social-icons a {
   display: flex;
@@ -215,12 +200,11 @@ h6 {
   justify-content: center;
   width: 40px;
   height: 40px;
-  background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
-  color: var(--white);
+  background-color: var(--primary-color); 
+  color: white;
   border-radius: 50%;
   text-decoration: none;
-  transition: var(--transition);
-  font-size: 1.1rem;
+  transition: all 0.3s ease;
 }
 
 /*
