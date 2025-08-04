@@ -82,6 +82,13 @@ h6 {
 }
 
 /* Navbar */
+
+.navbar {
+  padding: 1rem 0;
+  transition: var(--transition);
+  box-shadow: var(--shadow);
+}
+
 .navbar-custom {
   background-color: var(--white);
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
@@ -90,6 +97,10 @@ h6 {
 
 .navbar-brand {
   text-decoration: none;
+  font-weight: 700;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
 }
 
 .logo-container {
@@ -127,6 +138,56 @@ h6 {
 .navbar-nav .nav-link:hover {
   color: var(--primary-color);
 }
+
+/*
+
+.navbar {
+  padding: 1rem 0;
+  transition: var(--transition);
+  box-shadow: var(--shadow);
+}
+
+.navbar-brand {
+  font-weight: 700;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+}
+
+.brand-text {
+  background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.navbar-nav .nav-link {
+  font-weight: 500;
+  margin: 0 0.5rem;
+  transition: var(--transition);
+  position: relative;
+}
+
+.navbar-nav .nav-link:hover {
+  color: var(--primary-color) !important;
+}
+
+.navbar-nav .nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+  transition: var(--transition);
+  transform: translateX(-50%);
+}
+
+.navbar-nav .nav-link:hover::after {
+  width: 100%;
+}
+*/
 
 .social-icons {
   gap: 10px;
