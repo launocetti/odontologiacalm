@@ -138,7 +138,7 @@ h6 {
   justify-content: center;
   width: 40px;
   height: 40px;
-  background-color: linear-gradient(to right, rgb(222, 200, 164), rgb(230, 190, 180), rgb(240, 180, 190), rgb(250, 170, 200), rgb(255, 145, 185));;
+  background-color: linear-gradient(to right, rgb(222, 200, 164));;
   color: white;
   border-radius: 50%;
   text-decoration: none;
