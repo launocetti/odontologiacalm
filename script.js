@@ -12,6 +12,7 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
   })
 })
 
+/*
 // Cerrar menú móvil al hacer click en un enlace
 document.querySelectorAll(".navbar-nav .nav-link").forEach((link) => {
   link.addEventListener("click", () => {
@@ -22,7 +23,8 @@ document.querySelectorAll(".navbar-nav .nav-link").forEach((link) => {
     }
   })
 })
-/*
+*/
+
 // Navbar scroll effect
 window.addEventListener("scroll", () => {
   const navbar = document.querySelector(".navbar-custom")
@@ -34,19 +36,7 @@ window.addEventListener("scroll", () => {
     navbar.style.backdropFilter = "none"
   }
 })
-*/
 
-// ===== NAVBAR SCROLL EFFECT =====
-window.addEventListener("scroll", () => {
-  const navbar = document.querySelector(".navbar")
-  if (window.scrollY > 50) {
-    navbar.style.background = "rgba(33, 37, 41, 0.95)"
-    navbar.style.backdropFilter = "blur(10px)"
-  } else {
-    navbar.style.background = "var(--dark-color)"
-    navbar.style.backdropFilter = "none"
-  }
-})
 
 // Form submission
 document.getElementById("contactForm").addEventListener("submit", function (e) {
