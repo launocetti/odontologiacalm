@@ -1,327 +1,225 @@
-// Smooth scrolling para los enlaces del menú
-document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-  anchor.addEventListener("click", function (e) {
-    e.preventDefault()
-    const target = document.querySelector(this.getAttribute("href"))
-    if (target) {
-      target.scrollIntoView({
-        behavior: "smooth",
-        block: "start",
-      })
-    }
-  })
-})
+// Mobile Menu Toggle
+document.addEventListener('DOMContentLoaded', function() {
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mobileNav = document.getElementById('mobileNav');
+    const mobileNavLinks = document.querySelectorAll('.nav-mobile-link');
 
-/*
-// Cerrar menú móvil al hacer click en un enlace
-document.querySelectorAll(".navbar-nav .nav-link").forEach((link) => {
-  link.addEventListener("click", () => {
-    const navbarCollapse = document.querySelector(".navbar-collapse")
-    if (navbarCollapse.classList.contains("show")) {
-      const bsCollapse = new window.bootstrap.Collapse(navbarCollapse)
-      bsCollapse.hide()
-    }
-  })
-})
-*/
+    // Toggle mobile menu
+    mobileMenuBtn.addEventListener('click', function() {
+        mobileMenuBtn.classList.toggle('active');
+        mobileNav.classList.toggle('active');
+    });
 
-// Navbar scroll effect
-window.addEventListener("scroll", () => {
-  const navbar = document.querySelector(".navbar-custom")
-  if (window.scrollY > 50) {
-    navbar.style.backgroundColor = "rgba(255, 255, 255, 0.95)"
-    navbar.style.backdropFilter = "blur(10px)"
-  } else {
-    navbar.style.backgroundColor = "#ffffff"
-    navbar.style.backdropFilter = "none"
-  }
-})
+    // Close mobile menu when clicking on a link
+    mobileNavLinks.forEach(link => {
+        link.addEventListener('click', function() {
+            mobileMenuBtn.classList.remove('active');
+            mobileNav.classList.remove('active');
+        });
+    });
 
-
-// Form submission
-document.getElementById("contactForm").addEventListener("submit", function (e) {
-  e.preventDefault()
-
-  // Get form data
-  const formData = new FormData(this)
-  const data = Object.fromEntries(formData)
-
-  // Show loading state
-  const submitBtn = this.querySelector('button[type="submit"]')
-  const originalText = submitBtn.textContent
-  submitBtn.textContent = "Enviando..."
-  submitBtn.disabled = true
-
-  // Simulate form submission (replace with actual form handling)
-  setTimeout(() => {
-    // Show success message
-    showNotification("¡Mensaje enviado correctamente! Nos pondremos en contacto contigo pronto.", "success")
-
-    // Reset form
-    this.reset()
-
-    // Reset button
-    submitBtn.textContent = originalText
-    submitBtn.disabled = false
-  }, 2000)
-})
-
-// Notification system
-function showNotification(message, type = "info") {
-  // Remove existing notifications
-  const existingNotifications = document.querySelectorAll(".notification")
-  existingNotifications.forEach((notification) => notification.remove())
-
-  // Create notification element
-  const notification = document.createElement("div")
-  notification.className = `notification alert alert-${type === "success" ? "success" : "info"} alert-dismissible fade show`
-  notification.style.cssText = `
-        position: fixed;
-        top: 20px;
-        right: 20px;
-        z-index: 9999;
-        max-width: 400px;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    `
-
-  notification.innerHTML = `
-        ${message}
-        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
-    `
-
-  document.body.appendChild(notification)
-
-  // Auto remove after 5 seconds
-  setTimeout(() => {
-    if (notification.parentNode) {
-      notification.remove()
-    }
-  }, 5000)
-}
-
-// WhatsApp button functionality
-document.querySelectorAll('a[href*="whatsapp"]').forEach((link) => {
-  link.addEventListener("click", (e) => {
-    // Track WhatsApp click (you can add analytics here)
-    console.log("WhatsApp contact initiated")
-  })
-})
-
-// Animate elements on scroll
-const observerOptions = {
-  threshold: 0.1,
-  rootMargin: "0px 0px -50px 0px",
-}
-
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach((entry) => {
-    if (entry.isIntersecting) {
-      entry.target.style.opacity = "1"
-      entry.target.style.transform = "translateY(0)"
-    }
-  })
-}, observerOptions)
-
-// Observe elements for animation
-document.addEventListener("DOMContentLoaded", () => {
-  const animateElements = document.querySelectorAll(".service-card, .team-card, .testimonial-card, .horarios-card")
-
-  animateElements.forEach((el) => {
-    el.style.opacity = "0"
-    el.style.transform = "translateY(30px)"
-    el.style.transition = "opacity 0.6s ease, transform 0.6s ease"
-    observer.observe(el)
-  })
-})
-
-// Stats counter animation
-function animateStats() {
-  const stats = document.querySelectorAll(".stat-number")
-
-  stats.forEach((stat) => {
-    const target = Number.parseInt(stat.textContent.replace(/\D/g, ""))
-    const suffix = stat.textContent.replace(/\d/g, "")
-    let current = 0
-    const increment = target / 100
-    const timer = setInterval(() => {
-      current += increment
-      if (current >= target) {
-        current = target
-        clearInterval(timer)
-      }
-      stat.textContent = Math.floor(current) + suffix
-    }, 20)
-  })
-}
-
-// Trigger stats animation when stats section is visible
-const statsSection = document.querySelector(".stats-section")
-if (statsSection) {
-  const statsObserver = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          animateStats()
-          statsObserver.unobserve(entry.target)
+    // Close mobile menu when clicking outside
+    document.addEventListener('click', function(event) {
+        if (!mobileMenuBtn.contains(event.target) && !mobileNav.contains(event.target)) {
+            mobileMenuBtn.classList.remove('active');
+            mobileNav.classList.remove('active');
         }
-      })
-    },
-    { threshold: 0.5 },
-  )
+    });
 
-  statsObserver.observe(statsSection)
+    // Smooth scrolling for navigation links
+    const navLinks = document.querySelectorAll('a[href^="#"]');
+    navLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            const targetSection = document.querySelector(targetId);
+            
+            if (targetSection) {
+                const headerHeight = document.querySelector('.header').offsetHeight;
+                const targetPosition = targetSection.offsetTop - headerHeight;
+                
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+
+    // Form submission
+    const contactForm = document.getElementById('contactForm');
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = new FormData(this);
+            const formObject = {};
+            formData.forEach((value, key) => {
+                formObject[key] = value;
+            });
+            
+            // Show success message (you can replace this with actual form submission)
+            alert('¡Gracias por tu mensaje! Nos pondremos en contacto contigo pronto.');
+            
+            // Reset form
+            this.reset();
+        });
+    }
+
+    // Intersection Observer for animations
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver(function(entries) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('fade-in-up');
+            }
+        });
+    }, observerOptions);
+
+    // Observe elements for animation
+    const animatedElements = document.querySelectorAll('.service-card, .team-card, .contact-item');
+    animatedElements.forEach(el => {
+        observer.observe(el);
+    });
+
+    // Header background on scroll
+    const header = document.querySelector('.header');
+    window.addEventListener('scroll', function() {
+        if (window.scrollY > 100) {
+            header.style.background = 'rgba(255, 255, 255, 0.98)';
+        } else {
+            header.style.background = 'rgba(255, 255, 255, 0.95)';
+        }
+    });
+
+    // WhatsApp button functionality
+    const whatsappButtons = document.querySelectorAll('a[href*="whatsapp"]');
+    whatsappButtons.forEach(button => {
+        button.addEventListener('click', function(e) {
+            // Track WhatsApp click (you can add analytics here)
+            console.log('WhatsApp button clicked');
+        });
+    });
+
+    // Service card hover effects
+    const serviceCards = document.querySelectorAll('.service-card');
+    serviceCards.forEach(card => {
+        card.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-8px)';
+        });
+        
+        card.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateY(-2px)';
+        });
+    });
+
+    // Team card hover effects
+    const teamCards = document.querySelectorAll('.team-card');
+    teamCards.forEach(card => {
+        card.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-4px)';
+        });
+        
+        card.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateY(-2px)';
+        });
+    });
+
+    // Button click effects
+    const buttons = document.querySelectorAll('.btn');
+    buttons.forEach(button => {
+        button.addEventListener('click', function(e) {
+            // Create ripple effect
+            const ripple = document.createElement('span');
+            const rect = this.getBoundingClientRect();
+            const size = Math.max(rect.width, rect.height);
+            const x = e.clientX - rect.left - size / 2;
+            const y = e.clientY - rect.top - size / 2;
+            
+            ripple.style.width = ripple.style.height = size + 'px';
+            ripple.style.left = x + 'px';
+            ripple.style.top = y + 'px';
+            ripple.classList.add('ripple');
+            
+            this.appendChild(ripple);
+            
+            setTimeout(() => {
+                ripple.remove();
+            }, 600);
+        });
+    });
+
+    // Add ripple CSS
+    const style = document.createElement('style');
+    style.textContent = `
+        .btn {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .ripple {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            transform: scale(0);
+            animation: ripple-animation 0.6s linear;
+            pointer-events: none;
+        }
+        
+        @keyframes ripple-animation {
+            to {
+                transform: scale(4);
+                opacity: 0;
+            }
+        }
+    `;
+    document.head.appendChild(style);
+
+    // Lazy loading for images
+    const images = document.querySelectorAll('img[src*="placeholder"]');
+    const imageObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const img = entry.target;
+                // You can replace placeholder images with actual images here
+                observer.unobserve(img);
+            }
+        });
+    });
+
+    images.forEach(img => {
+        imageObserver.observe(img);
+    });
+});
+
+// Utility functions
+function debounce(func, wait) {
+    let timeout;
+    return function executedFunction(...args) {
+        const later = () => {
+            clearTimeout(timeout);
+            func(...args);
+        };
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+    };
 }
 
-// Service card hover effects
-document.querySelectorAll(".service-card").forEach((card) => {
-  card.addEventListener("mouseenter", function () {
-    this.style.transform = "translateY(-10px) scale(1.02)"
-  })
-
-  card.addEventListener("mouseleave", function () {
-    this.style.transform = "translateY(0) scale(1)"
-  })
-})
-
-// Mobile menu improvements
-const navbarToggler = document.querySelector(".navbar-toggler")
-const navbarCollapse = document.querySelector(".navbar-collapse")
-
-if (navbarToggler && navbarCollapse) {
-  navbarToggler.addEventListener("click", () => {
-    // Add animation class
-    navbarCollapse.classList.toggle("show")
-  })
-}
-
-// Lazy loading for images
-document.addEventListener("DOMContentLoaded", () => {
-  const images = document.querySelectorAll('img[src*="placeholder"]')
-
-  const imageObserver = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        const img = entry.target
-        // Here you would replace with actual image URLs
-        img.classList.add("loaded")
-        imageObserver.unobserve(img)
-      }
-    })
-  })
-
-  images.forEach((img) => imageObserver.observe(img))
-})
-
-// Form validation
-function validateForm(form) {
-  const requiredFields = form.querySelectorAll("[required]")
-  let isValid = true
-
-  requiredFields.forEach((field) => {
-    if (!field.value.trim()) {
-      field.classList.add("is-invalid")
-      isValid = false
+// Optimized scroll handler
+const handleScroll = debounce(() => {
+    const header = document.querySelector('.header');
+    if (window.scrollY > 100) {
+        header.style.background = 'rgba(255, 255, 255, 0.98)';
+        header.style.boxShadow = '0 4px 6px -1px rgb(0 0 0 / 0.1)';
     } else {
-      field.classList.remove("is-invalid")
+        header.style.background = 'rgba(255, 255, 255, 0.95)';
+        header.style.boxShadow = '0 1px 2px 0 rgb(0 0 0 / 0.05)';
     }
-  })
+}, 10);
 
-  // Email validation
-  const emailField = form.querySelector('input[type="email"]')
-  if (emailField && emailField.value) {
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
-    if (!emailRegex.test(emailField.value)) {
-      emailField.classList.add("is-invalid")
-      isValid = false
-    }
-  }
-
-  // Phone validation
-  const phoneField = form.querySelector('input[type="tel"]')
-  if (phoneField && phoneField.value) {
-    const phoneRegex = /^[+]?[0-9\s\-$$$$]{10,}$/
-    if (!phoneRegex.test(phoneField.value)) {
-      phoneField.classList.add("is-invalid")
-      isValid = false
-    }
-  }
-
-  return isValid
-}
-
-// Add input event listeners for real-time validation
-document.querySelectorAll("input, select, textarea").forEach((field) => {
-  field.addEventListener("input", function () {
-    if (this.classList.contains("is-invalid")) {
-      if (this.value.trim()) {
-        this.classList.remove("is-invalid")
-      }
-    }
-  })
-})
-
-// Accessibility improvements
-document.addEventListener("keydown", (e) => {
-  // Skip to main content with Tab key
-  if (e.key === "Tab" && !e.shiftKey) {
-    const focusableElements = document.querySelectorAll(
-      'a[href], button, textarea, input, select, [tabindex]:not([tabindex="-1"])',
-    )
-
-    // Add focus indicators
-    focusableElements.forEach((el) => {
-      el.addEventListener("focus", function () {
-        this.style.outline = "2px solid var(--primary-color)"
-        this.style.outlineOffset = "2px"
-      })
-
-      el.addEventListener("blur", function () {
-        this.style.outline = "none"
-      })
-    })
-  }
-})
-
-// Print styles
-window.addEventListener("beforeprint", () => {
-  document.body.classList.add("printing")
-})
-
-window.addEventListener("afterprint", () => {
-  document.body.classList.remove("printing")
-})
-
-// Performance monitoring
-window.addEventListener("load", () => {
-  // Log page load time
-  const loadTime = performance.now()
-  console.log(`Page loaded in ${Math.round(loadTime)}ms`)
-
-  // Check for slow loading elements
-  const images = document.querySelectorAll("img")
-  images.forEach((img) => {
-    if (!img.complete) {
-      console.warn("Slow loading image:", img.src)
-    }
-  })
-})
-
-// Error handling
-window.addEventListener("error", (e) => {
-  console.error("JavaScript error:", e.error)
-  // You could send this to an error tracking service
-})
-
-// Service worker registration (for PWA capabilities)
-if ("serviceWorker" in navigator) {
-  window.addEventListener("load", () => {
-    navigator.serviceWorker
-      .register("/sw.js")
-      .then((registration) => {
-        console.log("ServiceWorker registration successful")
-      })
-      .catch((err) => {
-        console.log("ServiceWorker registration failed")
-      })
-  })
-}
+window.addEventListener('scroll', handleScroll);
