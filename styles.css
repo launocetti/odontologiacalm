@@ -99,7 +99,7 @@ h6 {
 }
 
 .logo-container i {
-  background-color: linear-gradient(to right, rgb(222, 200, 164), rgb(230, 190, 180), rgb(240, 180, 190), rgb(250, 170, 200), rgb(255, 145, 185));
+  background-color: var(--primary-color);
   color: white;
   padding: 10px;
   border-radius: 8px;
