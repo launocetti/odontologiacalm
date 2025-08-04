@@ -3,192 +3,245 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calm Odontologia - Dra Nanci Briner</title>
-    <meta name="description" content="Calm Odontologia - Centro odontológico profesional con la Dra Nanci Briner en Manuel Alberti, Pilar. Atención personalizada y tecnología de vanguardia.">
+    <title>Calm Odontología - Dra Nanci Briner</title>
+    <meta name="description" content="Calm Odontología - Centro odontológico profesional con la Dra Nanci Briner en Manuel Alberti, Pilar. Atención personalizada y tecnología de vanguardia.">
     
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="/imagenes/logo.png?height=32&width=32" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     
-    <!-- Bootstrap 5 -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
-    
-    <!-- CSS Personalizado -->
-    <link href="styles.css" rel="stylesheet">
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="main-container">
-
-<!-- NAVBAR RESPONSIVO -->
-        
-        <nav class=" navbar navbar-expand-lg navbar-dark bg-dark fixed-top"> <!-- navbar navbar-expand-lg navbar-custom sticky-top -->
-            <div class="container">
+    <!-- HEADER -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
                 <!-- Logo -->
-                <a class="navbar-brand" href="#inicio">
-                    <div class="logo-container">
-                     <div class="col-lg-6 mb-4">
-                        <i class="fas fa-tooth"></i>
-                     </div>
-                        <div class="logo-text">
-                            <h5 class="mb-0">Calm Odontologia</h5>
-                            <small>Dra. Nanci Briner</small>
+                <div class="logo">
+                    <a href="#inicio" class="logo-link">
+                        <div class="logo-icon">
+                            <i class="fas fa-tooth"></i>
                         </div>
-                    </div>
-                </a>
-                
-                <!-- Botón móvil -->
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                
-                <!-- Menú -->
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav ms-auto">
-                        <li class="nav-item">
-                            <a class="nav-link" href="#inicio">Inicio</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#servicios">Servicios</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#equipo">Equipo</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#horarios">Horarios</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#contacto">Contacto</a>
-                        </li>
-                    </ul>
-                    
-                    <!-- Redes sociales -->
-                    <div class="social-icons d-flex ms-3">
-                        <a href="https://api.whatsapp.com/send?phone=5491133626107&text=Hola%20,te%20asesoramos%20sobre%20nuestras%20clases%20por%20whatsapp%20gestiona%20tu%20consulta%20por%20aqui%20y%20te%20responderemos%20a%20la%20brevedad." target="_blank" title="WhatsApp">
+                        <div class="logo-text">
+                            <h1>Calm Odontología</h1>
+                            <p>Dra. Nanci Briner</p>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <nav class="nav-desktop">
+                    <a href="#inicio" class="nav-link">Inicio</a>
+                    <a href="#servicios" class="nav-link">Servicios</a>
+                    <a href="#equipo" class="nav-link">Equipo</a>
+                    <a href="#horarios" class="nav-link">Horarios</a>
+                    <a href="#contacto" class="nav-link">Contacto</a>
+                </nav>
+
+                <!-- Desktop Social & CTA -->
+                <div class="header-actions">
+                    <div class="social-icons">
+                        <a href="https://api.whatsapp.com/send?phone=5491133626107&text=Hola%20,te%20asesoramos%20sobre%20nuestras%20clases%20por%20whatsapp%20gestiona%20tu%20consulta%20por%20aqui%20y%20te%20responderemos%20a%20la%20brevedad." target="_blank" class="social-icon whatsapp">
                             <i class="fab fa-whatsapp"></i>
                         </a>
-                        <a href="#" target="_blank" title="Instagram">
+                        <a href="#" target="_blank" class="social-icon instagram">
                             <i class="fab fa-instagram"></i>
                         </a>
                     </div>
+                    <button class="btn btn-primary">
+                        <i class="fas fa-phone"></i>
+                        Agendar Cita
+                    </button>
+                </div>
+
+                <!-- Mobile menu button -->
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <span class="hamburger"></span>
+                    <span class="hamburger"></span>
+                    <span class="hamburger"></span>
+                </button>
+            </div>
+
+            <!-- Mobile Navigation -->
+            <div class="nav-mobile" id="mobileNav">
+                <div class="nav-mobile-content">
+                    <a href="#inicio" class="nav-mobile-link">Inicio</a>
+                    <a href="#servicios" class="nav-mobile-link">Servicios</a>
+                    <a href="#equipo" class="nav-mobile-link">Equipo</a>
+                    <a href="#horarios" class="nav-mobile-link">Horarios</a>
+                    <a href="#contacto" class="nav-mobile-link">Contacto</a>
+                    
+                    <div class="mobile-actions">
+                        <div class="social-icons">
+                            <a href="https://api.whatsapp.com/send?phone=5491133626107&text=Hola%20,te%20asesoramos%20sobre%20nuestras%20clases%20por%20whatsapp%20gestiona%20tu%20consulta%20por%20aqui%20y%20te%20responderemos%20a%20la%20brevedad." target="_blank" class="social-icon whatsapp">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                            <a href="#" target="_blank" class="social-icon instagram">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                        </div>
+                        <button class="btn btn-primary btn-full">
+                            <i class="fas fa-phone"></i>
+                            Agendar Cita
+                        </button>
+                    </div>
                 </div>
             </div>
-        </nav>
+        </div>
+    </header>
 
-         
-        
+    <main>
         <!-- HERO SECTION -->
-        <section id="inicio" class="hero-section">
-            <div class="container container-responsive">
-                <div class="row align-items-center">
-                    <div class="col-lg-6 mb-4">
-                        <img src="../imagenes/calm 1.jpg?height=400&width=600" class="img-fluid rounded shadow">
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="badge-custom mb-4">+25 años de experiencia</div>
-                            <h1 class="hero-title">Tu sonrisa es nuestra <span class="text-primary">prioridad</span></h1>
-                            <p class="hero-subtitle">En CALM, con más de 25 años de experiencia, te ayudamos a recuperar tu sonrisa con un trato cálido, personalizado y profesional. Nos especializamos en ortodoncia y prótesis, atendiendo a pacientes de todas las edades y ofreciendo planes de pago accesibles.</p>
-                        <div class="hero-buttons">
-                                <a href="#contacto" class="btn btn-primary btn-lg me-3">
-                                    <i class="fas fa-phone me-2"></i>Agendar Consulta
-                                </a>
-                                <a href="#contacto" class="btn btn-outline-primary btn-lg">
-                                    <i class="fas fa-map-marker-alt me-2"></i>Ver Ubicación
-                                </a>
+        <section id="inicio" class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <div class="hero-text">
+                        <div class="badge">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
                             </div>
+                            <span>+25 años de experiencia</span>
+                        </div>
+                        
+                        <h1 class="hero-title">
+                            Tu sonrisa es nuestra <span class="gradient-text">prioridad</span>
+                        </h1>
+                        
+                        <p class="hero-subtitle">
+                            En CALM, con más de 25 años de experiencia, te ayudamos a recuperar tu sonrisa con un trato cálido, 
+                            personalizado y profesional. Nos especializamos en ortodoncia y prótesis, atendiendo a pacientes de 
+                            todas las edades y ofreciendo planes de pago accesibles.
+                        </p>
+
+                        <div class="hero-buttons">
+                            <button class="btn btn-primary btn-lg">
+                                <i class="fas fa-phone"></i>
+                                Agendar Consulta
+                            </button>
+                            <button class="btn btn-outline btn-lg">
+                                <i class="fas fa-map-marker-alt"></i>
+                                Ver Ubicación
+                            </button>
+                        </div>
+
+                        <div class="hero-stats">
+                            <div class="stat">
+                                <div class="stat-number">25+</div>
+                                <div class="stat-label">Años exp.</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat-number">1000+</div>
+                                <div class="stat-label">Pacientes</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat-number">100%</div>
+                                <div class="stat-label">Dedicación</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="hero-image">
+                        <div class="image-container">
+                            <img src="/placeholder.svg?height=500&width=600" alt="Consultorio dental profesional" />
+                            <div class="image-bg"></div>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        
-
         <!-- SERVICIOS SECTION -->
-        <section id="servicios" class="section-padding bg-light">
+        <section id="servicios" class="services">
             <div class="container">
-                <div class="section-title text-center mb-5">
+                <div class="section-header">
                     <h2>Nuestros Servicios</h2>
-                    <p class="text-muted">Ofrecemos una amplia gama de tratamientos dentales con la más alta calidad</p>
+                    <p>Ofrecemos una amplia gama de tratamientos dentales con la más alta calidad</p>
                 </div>
-                
-                <div class="row">
-                    <div class="col-md-6 col-lg-4 mb-4">
-                        <div class="service-card">
-                            <div class="service-icon">
-                                <i class="fas fa-solid fa-hand-holding-medical"></i>
-                            </div>
-                            <h4>Odontología General</h4>
-                            <p>Limpieza dental, resinas, extracciones, diagnóstico y prevención.</p>
-                            <p>Odontología Integral, diagnósticos y tratamientos.</p>
-                            <div class="service-price">.....</div>
-                            <button class="btn btn-outline-primary btn-sm">Más Info</button>
+
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-hand-holding-medical"></i>
+                        </div>
+                        <h4>Odontología General</h4>
+                        <p>Limpieza dental, resinas, extracciones, diagnóstico y prevención.</p>
+                        <p class="service-details">Odontología Integral, diagnósticos y tratamientos.</p>
+                        <div class="service-footer">
+                            <span class="service-price">Consultar</span>
+                            <button class="btn btn-outline btn-sm">Más Info</button>
                         </div>
                     </div>
-                    
-                    <div class="col-md-6 col-lg-4 mb-4">
-                        <div class="service-card">
-                            <div class="service-icon">
-                                <i class="fas fa-solid fa-teeth"></i>
-                            </div>
-                            <h4>Ortodoncia</h4>
-                            <p>Brackets metálicos y estéticos, ortodoncia adultos, placas de contención.</p>
-                            <p>Correción de defectos e irregularidades de posición de los dientes.</p>
-                            <div class="service-price">.....</div>
-                            <button class="btn btn-outline-primary btn-sm">Más Info</button>
+
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-teeth"></i>
+                        </div>
+                        <h4>Ortodoncia</h4>
+                        <p>Brackets metálicos y estéticos, ortodoncia adultos, placas de contención.</p>
+                        <p class="service-details">Corrección de defectos e irregularidades de posición de los dientes.</p>
+                        <div class="service-footer">
+                            <span class="service-price">Consultar</span>
+                            <button class="btn btn-outline btn-sm">Más Info</button>
                         </div>
                     </div>
-                    
-                    <div class="col-md-6 col-lg-4 mb-4">
-                        <div class="service-card">
-                            <div class="service-icon">
-                                <i class="fas fa-heart"></i>
-                            </div>
-                            <h4>Odontopediatría</h4>
-                            <p>Aparatos removibles.</p>
-                            <p>Atención de niños desde 3 años hasta su adolescia.</p>
-                            <div class="service-price">...</div>
-                            <button class="btn btn-outline-primary btn-sm">Más Info</button>
+
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <h4>Odontopediatría</h4>
+                        <p>Aparatos removibles.</p>
+                        <p class="service-details">Atención de niños desde 3 años hasta su adolescencia.</p>
+                        <div class="service-footer">
+                            <span class="service-price">Consultar</span>
+                            <button class="btn btn-outline btn-sm">Más Info</button>
                         </div>
                     </div>
-                    
-                    <div class="col-md-6 col-lg-4 mb-4">
-                        <div class="service-card">
-                            <div class="service-icon">
-                                <i class="fas fa-solid fa-tooth"></i>
-                            </div>
-                            <h4>Prótesis dentales</h4>
-                            <p>Protesis removibles, parciales y completas, de acrilico, cromo y flexibles.</p>
-                            <div class="service-price">.....</div>
-                            <button class="btn btn-outline-primary btn-sm">Más Info</button>
+
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-tooth"></i>
+                        </div>
+                        <h4>Prótesis dentales</h4>
+                        <p>Prótesis removibles, parciales y completas, de acrílico, cromo y flexibles.</p>
+                        <div class="service-footer">
+                            <span class="service-price">Consultar</span>
+                            <button class="btn btn-outline btn-sm">Más Info</button>
                         </div>
                     </div>
-                    
-                    <div class="col-md-6 col-lg-4 mb-4">
-                        <div class="service-card">
-                            <div class="service-icon">
-                                <i class="fas fa-shield-alt"></i>
-                            </div>
-                            <h4>Endodoncia</h4>
-                            <p>Tratamientos de conducto para salvar dientes con infecciones o daños severos.</p>
-                            <div class="service-price">....</div>
-                            <button class="btn btn-outline-primary btn-sm">Más Info</button>
+
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h4>Endodoncia</h4>
+                        <p>Tratamientos de conducto para salvar dientes con infecciones o daños severos.</p>
+                        <div class="service-footer">
+                            <span class="service-price">Consultar</span>
+                            <button class="btn btn-outline btn-sm">Más Info</button>
                         </div>
                     </div>
-                    
-                    <div class="col-md-6 col-lg-4 mb-4">
-                        <div class="service-card">
-                            <div class="service-icon">
-                                <i class="fas fa-solid fa-teeth-open"></i>
-                            </div>
-                            <h4>Tratamiento Periodontal</h4>
-                            <p>Limpieza y fluor.</p>
-                            <div class="service-price">...</div>
-                            <button class="btn btn-outline-primary btn-sm">Más Info</button>
+
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-teeth-open"></i>
+                        </div>
+                        <h4>Tratamiento Periodontal</h4>
+                        <p>Limpieza y flúor.</p>
+                        <div class="service-footer">
+                            <span class="service-price">Consultar</span>
+                            <button class="btn btn-outline btn-sm">Más Info</button>
                         </div>
                     </div>
                 </div>
@@ -196,66 +249,93 @@
         </section>
 
         <!-- EQUIPO SECTION -->
-        <section id="equipo" class="section-padding">
+        <section id="equipo" class="team">
             <div class="container">
-                <div class="section-title text-center mb-5">
+                <div class="section-header">
                     <h2>Nuestro Equipo</h2>
-                    <p class="text-muted">Profesionales altamente calificados comprometidos con tu bienestar</p>
+                    <p>Profesionales altamente calificados comprometidos con tu bienestar</p>
                 </div>
-                
-                <div class="row justify-content-center">
-                    <div class="col-md-4 mb-4">
-                        <div class="team-card text-center">
-                            <div class="team-image">
-                                <img src="/placeholder.svg?height=300&width=300" alt="Dra. Nanci Briner" class="img-fluid rounded-circle">
+
+                <div class="team-grid">
+                    <div class="team-card">
+                        <div class="team-image">
+                            <img src="/placeholder.svg?height=300&width=300" alt="Dra. Nanci Briner" />
+                            <div class="team-badge">
+                                <i class="fas fa-tooth"></i>
                             </div>
-                            <h4>Dra. Nanci Briner</h4>
-                            <p class="team-specialty">Odontóloga - Odontología General</p>
-                            <p class="team-experience">Especialista en atención personalizada</p>
                         </div>
+                        <h4>Dra. Nanci Briner</h4>
+                        <p class="team-specialty">Odontóloga - Odontología General</p>
+                        <p class="team-experience">Especialista en atención personalizada</p>
+                        <p class="team-years">+25 años de experiencia cuidando sonrisas</p>
                     </div>
 
-                    <div class="col-md-4 mb-4">
-                        <div class="team-card text-center">
-                            <div class="team-image">
-                                <img src="/placeholder.svg?height=300&width=300" alt="Cirugía Bucomaxilofacial" class="img-fluid rounded-circle">
+                    <div class="team-card">
+                        <div class="team-image">
+                            <div class="team-placeholder">
+                                <i class="fas fa-user-md"></i>
                             </div>
-                            <h4>Cirugías</h4>
-                            <p class="team-specialty">Extracciones</p>
-                            <p class="team-specialty">Piezas dentarias retenidas</p>
+                            <div class="team-badge">
+                                <i class="fas fa-calendar"></i>
+                            </div>
                         </div>
+                        <h4>Cirugías</h4>
+                        <p class="team-specialty">Extracciones</p>
+                        <p class="team-specialty">Piezas dentarias retenidas</p>
+                        <p class="team-experience">Procedimientos especializados</p>
                     </div>
-                    
-                </div>      
+                </div>
+            </div>
         </section>
 
         <!-- HORARIOS SECTION -->
-        <section id="horarios" class="section-padding bg-light">
+        <section id="horarios" class="schedule">
             <div class="container">
-                <div class="section-title text-center mb-5">
+                <div class="section-header">
                     <h2>Horarios de Atención</h2>
-                    <p class="text-muted">Estamos aquí para cuidar tu sonrisa</p>
+                    <p>Estamos aquí para cuidar tu sonrisa</p>
                 </div>
-                
-                <div class="row justify-content-center">
-                    <div class="col-md-6">
-                        <div class="horarios-card text-center">
-                            <div class="horarios-icon">
-                                <i class="fas fa-map-marker-alt"></i>
+
+                <div class="schedule-card">
+                    <div class="schedule-header">
+                        <div class="schedule-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <h3>Manuel Alberti - Pilar</h3>
+                    </div>
+                    
+                    <div class="schedule-content">
+                        <div class="schedule-item">
+                            <div class="schedule-item-icon">
+                                <i class="fas fa-clock"></i>
                             </div>
-                            <h4>Manuel Alberti - Pilar</h4>
-                            <div class="horarios-info">
-                                <div class="d-flex align-items-center justify-content-center mb-3">
-                                    <i class="fas fa-clock me-2"></i>
-                                    <span>Horarios Flexibles</span>
+                            <div class="schedule-item-content">
+                                <h4>Horarios Flexibles</h4>
+                                <div class="schedule-times">
+                                    <p><strong>Lun - Mié - Vie:</strong><br />19:00 hs. a 22:30 hs.</p>
+                                    <p><strong>Mar - Jue:</strong><br />14:00 hs. a 22:30 hs.</p>
+                                    <p class="emergency">Se atienden urgencias</p>
                                 </div>
-                                <div class="d-flex align-items-center justify-content-center mb-3">
-                                    <i class="fas fa-users me-2"></i>
-                                    <span>Atención personalizada</span>
-                                </div>
-                                <p class="text-muted">
-                                    Contactanos por WhatsApp para coordinar tu cita en el horario que mejor te convenga
-                                </p>
+                            </div>
+                        </div>
+
+                        <div class="schedule-item">
+                            <div class="schedule-item-icon">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <div class="schedule-item-content">
+                                <h4>Atención Personalizada</h4>
+                                <p>Cada paciente recibe un trato único y cuidado especial</p>
+                            </div>
+                        </div>
+
+                        <div class="schedule-item">
+                            <div class="schedule-item-icon">
+                                <i class="fab fa-whatsapp"></i>
+                            </div>
+                            <div class="schedule-item-content">
+                                <h4>WhatsApp</h4>
+                                <p>Contáctanos para coordinar tu cita en el horario que mejor te convenga</p>
                             </div>
                         </div>
                     </div>
@@ -263,151 +343,178 @@
             </div>
         </section>
 
-        
-
         <!-- CONTACTO SECTION -->
-        <section id="contacto" class="section-padding bg-light">
+        <section id="contacto" class="contact">
             <div class="container">
-                <div class="row">
-                    <div class="col-lg-6 mb-5">
-                        <h2>Agenda tu cita hoy</h2>
-                        <p class="text-muted mb-4">Estamos aquí para cuidar tu sonrisa. Contáctanos para agendar tu consulta.</p>
-                        
-                        <div class="contact-info">
-                            <div class="contact-item">
-                                <div class="contact-icon">
-                                    <i class="fas fa-phone"></i>
-                                </div>
-                                <div>
-                                    <strong>Teléfono</strong>
-                                    <p>+54 9 11 3362 6107</p>
-                                </div>
+                <div class="section-header">
+                    <h2>Agenda tu cita hoy</h2>
+                    <p>Estamos aquí para cuidar tu sonrisa. Contáctanos para agendar tu consulta.</p>
+                </div>
+
+                <div class="contact-content">
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
                             </div>
-                            
-                            <div class="contact-item">
-                                <div class="contact-icon">
-                                    <i class="fas fa-envelope"></i>
-                                </div>
-                                <div>
-                                    <strong>Email</strong>
-                                    <p>rdariobuyatti@yahoo.com</p>
-                                </div>
+                            <div class="contact-details">
+                                <h4>Teléfono</h4>
+                                <p>+54 9 11 3362 6107</p>
                             </div>
-                            
-                            <div class="contact-item">
-                                <div class="contact-icon">
-                                    <i class="fas fa-map-marker-alt"></i>
-                                </div>
-                                <div>
-                                    <strong>Dirección</strong>
-                                    <p>Manuel Alberti - Pilar, Buenos Aires</p>
-                                </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
                             </div>
-                            
-                            <div class="contact-item">
-                                <div class="contact-icon">
-                                    <i class="fas fa-clock"></i>
-                                </div>
-                                <div>
-                                    <strong>Horarios</strong>
-                                    <p>Lun - mier - Vier: 19:00 hs. a 22:30 hs.<br>Mar - Juev: 14:00 hs. a 22:30 hs.<br>Se atienden urgencias</p>
+                            <div class="contact-details">
+                                <h4>Email</h4>
+                                <p>rdariobuyatti@yahoo.com</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h4>Dirección</h4>
+                                <p>Manuel Alberti - Pilar, Buenos Aires</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h4>Horarios</h4>
+                                <div class="contact-schedule">
+                                    <p>Lun - Mié - Vie: 19:00 hs. a 22:30 hs.</p>
+                                    <p>Mar - Jue: 14:00 hs. a 22:30 hs.</p>
+                                    <p class="emergency">Se atienden urgencias</p>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    
-                    <div class="col-lg-6">
+
+                    <div class="contact-form-container">
                         <div class="contact-form-card">
-                            <h4>Solicitar Cita</h4>
-                            <p class="text-muted">Completa el formulario y nos pondremos en contacto contigo</p>
+                            <h3>Solicitar Cita</h3>
+                            <p>Completa el formulario y nos pondremos en contacto contigo</p>
                             
-                            <form id="contactForm">
-                                <div class="row">
-                                    <div class="col-md-6 mb-3">
-                                        <label class="form-label">Nombre</label>
-                                        <input type="text" class="form-control" placeholder="Tu nombre" required>
+                            <form class="contact-form" id="contactForm">
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label>Nombre</label>
+                                        <input type="text" placeholder="Tu nombre" required>
                                     </div>
-                                    <div class="col-md-6 mb-3">
-                                        <label class="form-label">Apellido</label>
-                                        <input type="text" class="form-control" placeholder="Tu apellido" required>
+                                    <div class="form-group">
+                                        <label>Apellido</label>
+                                        <input type="text" placeholder="Tu apellido" required>
                                     </div>
                                 </div>
                                 
-                                <div class="mb-3">
-                                    <label class="form-label">Teléfono</label>
-                                    <input type="tel" class="form-control" placeholder="Tu teléfono" required>
+                                <div class="form-group">
+                                    <label>Teléfono</label>
+                                    <input type="tel" placeholder="Tu teléfono" required>
                                 </div>
                                 
-                                <div class="mb-3">
-                                    <label class="form-label">Email</label>
-                                    <input type="email" class="form-control" placeholder="tu@email.com" required>
+                                <div class="form-group">
+                                    <label>Email</label>
+                                    <input type="email" placeholder="tu@email.com" required>
                                 </div>
                                 
-                                <div class="mb-3">
-                                    <label class="form-label">Servicio de interés</label>
-                                    <select class="form-select" required>
+                                <div class="form-group">
+                                    <label>Servicio de interés</label>
+                                    <select required>
                                         <option value="">Selecciona un servicio</option>
                                         <option value="consulta">Consulta General</option>
                                         <option value="ortodoncia">Ortodoncia</option>
-                                        <option value="estetica">Estética Dental</option>
+                                        <option value="protesis">Prótesis Dentales</option>
                                         <option value="endodoncia">Endodoncia</option>
                                         <option value="pediatria">Odontopediatría</option>
+                                        <option value="periodontal">Tratamiento Periodontal</option>
                                     </select>
                                 </div>
                                 
-                                <div class="mb-3">
-                                    <label class="form-label">Mensaje</label>
-                                    <textarea class="form-control" rows="3" placeholder="Cuéntanos sobre tu consulta..."></textarea>
+                                <div class="form-group">
+                                    <label>Mensaje</label>
+                                    <textarea placeholder="Cuéntanos sobre tu consulta..." rows="3"></textarea>
                                 </div>
                                 
-                                <button type="submit" class="btn btn-primary w-100">Enviar Solicitud</button>
+                                <button type="submit" class="btn btn-primary btn-full">
+                                    Enviar Solicitud
+                                </button>
                             </form>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-    
-     <!-- FOOTER -->
-        <footer class="footer-custom">
-            <div class="container">
-                <div class="footer-content">
-                    <div class="footer-section">
-                        <h4>Calm Odontologia</h4>
-                        <p>Dra. Nanci Briner</p>
-                        <p>Cuidando tu sonrisa con profesionalismo.</p>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <div class="footer-logo-icon">
+                            <i class="fas fa-tooth"></i>
+                        </div>
+                        <div class="footer-logo-text">
+                            <h3>Calm Odontología</h3>
+                            <p>Dra. Nanci Briner</p>
+                        </div>
                     </div>
-                    
-                    <div class="footer-section">
-                        <h4>Enlaces</h4>
-                        <ul>
-                            <li><a href="#inicio">Inicio</a></li>
-                            <li><a href="#servicios">Servicios</a></li>
-                            <li><a href="#equipo">Equipo</a></li>
-                            <li><a href="#contacto">Contacto</a></li>
-                        </ul>
+                    <p>Cuidando tu sonrisa con profesionalismo y más de 25 años de experiencia.</p>
+                    <div class="footer-social">
+                        <a href="https://api.whatsapp.com/send?phone=5491133626107&text=Hola%20,te%20asesoramos%20sobre%20nuestras%20clases%20por%20whatsapp%20gestiona%20tu%20consulta%20por%20aqui%20y%20te%20responderemos%20a%20la%20brevedad." target="_blank" class="social-icon whatsapp">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                        <a href="#" target="_blank" class="social-icon instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
                     </div>
-                    
-                    <div class="footer-section">
-                        <h4>Contacto</h4>
-                        <p><i class="fas fa-phone me-2"></i>+54 9 11 33626107</p>
-                        <p><i class="fas fa-envelope me-2"></i>rdariobuyatti@yahoo.com</p>
-                        <p><i class="fas fa-map-marker-alt me-2"></i>Manuel Alberti - Pilar, Buenos Aires</p>
-                    </div>
-                
                 </div>
-                
-                <div class="footer-bottom">
-                    <p>&copy; 2025 Calm Odontologia - Dra. Nanci Briner. Todos los derechos reservados.</p>
+
+                <div class="footer-section">
+                    <h4>Enlaces</h4>
+                    <ul>
+                        <li><a href="#inicio">Inicio</a></li>
+                        <li><a href="#servicios">Servicios</a></li>
+                        <li><a href="#equipo">Equipo</a></li>
+                        <li><a href="#horarios">Horarios</a></li>
+                        <li><a href="#contacto">Contacto</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Contacto</h4>
+                    <ul class="footer-contact">
+                        <li>
+                            <i class="fas fa-phone"></i>
+                            <span>+54 9 11 3362 6107</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <span>rdariobuyatti@yahoo.com</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Manuel Alberti - Pilar, Buenos Aires</span>
+                        </li>
+                    </ul>
                 </div>
             </div>
-        </footer>
-    </div>
 
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    
-    <!-- JavaScript personalizado -->
+            <div class="footer-bottom">
+                <p>&copy; 2025 Calm Odontología - Dra. Nanci Briner. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
     <script src="script.js"></script>
 </body>
 </html>
