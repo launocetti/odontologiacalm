@@ -129,7 +129,7 @@ h6 {
 }
 
 .navbar-nav .nav-link {
-  color: var(--text-dark);
+  color: var(--text-light);
   font-weight: 500;
   margin: 0 10px;
   transition: color 0.3s ease;
@@ -141,11 +141,6 @@ h6 {
 
 /*
 
-.navbar {
-  padding: 1rem 0;
-  transition: var(--transition);
-  box-shadow: var(--shadow);
-}
 
 .navbar-brand {
   font-weight: 700;
@@ -168,9 +163,6 @@ h6 {
   position: relative;
 }
 
-.navbar-nav .nav-link:hover {
-  color: var(--primary-color) !important;
-}
 
 .navbar-nav .nav-link::after {
   content: "";
