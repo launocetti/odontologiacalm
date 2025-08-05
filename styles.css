@@ -1040,7 +1040,7 @@ html {
 
 /* Footer */
 .footer {
-  background: var(--sand-800);
+  background: #949A8C ; /* var(--sand-800)*/
   color: var(--white);
   padding: 3rem 0;
 }
