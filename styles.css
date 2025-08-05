@@ -267,22 +267,22 @@ html {
 }
 
 .social-icon.whatsapp {
-  background: var(--green-500);
+  background: linear-gradient(#D3AC92, #D7A486); /*var(--green-500);*/
   color: var(--white);
 }
 
 .social-icon.whatsapp:hover {
-  background: var(--green-600);
+  background: linear-gradient(#D3AC92, #D4B7A4); /*var(--green-600);*/
   transform: translateY(-2px);
 }
 
 .social-icon.instagram {
-  background: linear-gradient(135deg, var(--rose-400) 0%, var(--rose-500) 100%);
+  background: linear-gradient(#D3AC92, #D7A486); /*linear-gradient(135deg, var(--rose-400) 0%, var(--rose-500) 100%);*/
   color: var(--white);
 }
 
 .social-icon.instagram:hover {
-  background: linear-gradient(135deg, var(--rose-500) 0%, var(--rose-600) 100%);
+  background: linear-gradient(#D3AC92, #D4B7A4); /*linear-gradient(135deg, var(--rose-500) 0%, var(--rose-600) 100%);*/
   transform: translateY(-2px);
 }
 
