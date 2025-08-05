@@ -1176,3 +1176,8 @@ html {
   max-width: 100%;
   height: auto;
 }
+
+#map {
+  height: 400px;
+  width: 100%;
+}
