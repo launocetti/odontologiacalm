@@ -1167,3 +1167,12 @@ html {
   }
 }
 
+.imagen-container {
+  display: inline-block;
+  position: relative;
+}
+
+.imagen-container img {
+  max-width: 100%;
+  height: auto;
+}
