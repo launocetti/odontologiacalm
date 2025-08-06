@@ -20,6 +20,12 @@
 </head>
 <body>
     <!-- HEADER -->
+Te ayudo a hacer la página completamente responsiva y arreglar el menú del navbar. Veo que tienes elementos mezclados de Bootstrap y CSS personalizado. Te proporciono una solución limpia:
+
+## HTML corregido (solo las partes que necesitan cambios):
+
+```html
+<!-- HEADER -->
 <header class="header">
     <div class="container">
         <div class="header-content">
@@ -36,31 +42,45 @@
                 </a>
             </div>
 
-          <!-- Navigation -->
-            <nav class="navbar navbar-expand-lg navbar-custom sticky-top" id="navbar">
-            <!-- Botón móvil -->
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <!-- Botón hamburguesa (solo móvil) -->
-                <button class="mobile-menu-toggle" id="mobileMenuToggle">
-                    <span class="hamburger-line"></span>
-                    <span class="hamburger-line"></span>
-                    <span class="hamburger-line"></span>
-                </button>
-            <!-- Menú -->
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav ms-auto">
-            
-                    <div class="nav-links">
-                        <a href="#inicio" class="nav-link">Inicio</a>
-                        <a href="#servicios" class="nav-link">Servicios</a>
-                        <a href="#equipo" class="nav-link">Equipo</a>
-                        <a href="#horarios" class="nav-link">Horarios</a>
-                        <a href="#contacto" class="nav-link">Contacto</a>
+            <!-- Botón hamburguesa (solo móvil) -->
+            <button class="mobile-menu-toggle" id="mobileMenuToggle">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+
+            <!-- Desktop Navigation -->
+            <nav class="nav-desktop">
+                <div class="nav-links">
+                    <a href="#inicio" class="nav-link">Inicio</a>
+                    <a href="#servicios" class="nav-link">Servicios</a>
+                    <a href="#equipo" class="nav-link">Equipo</a>
+                    <a href="#horarios" class="nav-link">Horarios</a>
+                    <a href="#contacto" class="nav-link">Contacto</a>
+                </div>
+                
+                <div class="nav-actions">
+                    <div class="social-icons">
+                        <a href="https://api.whatsapp.com/send?phone=5491133626107&text=" target="_blank" class="social-icon whatsapp">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                        <a href="#" target="_blank" class="social-icon instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
                     </div>
+                </div>
+            </nav>
+
+            <!-- Mobile Navigation -->
+            <div class="nav-mobile" id="mobileNav">
+                <div class="nav-mobile-content">
+                    <a href="#inicio" class="nav-mobile-link">Inicio</a>
+                    <a href="#servicios" class="nav-mobile-link">Servicios</a>
+                    <a href="#equipo" class="nav-mobile-link">Equipo</a>
+                    <a href="#horarios" class="nav-mobile-link">Horarios</a>
+                    <a href="#contacto" class="nav-mobile-link">Contacto</a>
                     
-                    <div class="nav-actions">
+                    <div class="mobile-actions">
                         <div class="social-icons">
                             <a href="https://api.whatsapp.com/send?phone=5491133626107&text=" target="_blank" class="social-icon whatsapp">
                                 <i class="fab fa-whatsapp"></i>
@@ -71,10 +91,11 @@
                         </div>
                     </div>
                 </div>
-            </nav>
+            </div>
         </div>
     </div>
 </header>
+```
 
     <main>
         <!-- HERO SECTION -->
