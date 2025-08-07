@@ -24,7 +24,9 @@ body {
   line-height: 1.6;
   color: var(--text-dark);
   overflow-x: hidden;
+  /*
   background-image: url(""../imagenes/fondo.jpg");
+  */
 }
 
 h1,
