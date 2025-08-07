@@ -83,7 +83,7 @@ h6 {
 
 /* Navbar */
 .navbar-custom {
-  background-color: var(--white);
+  background-color: #f5f2ed;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   padding: 15px 0;
 }
@@ -118,14 +118,14 @@ h6 {
 }
 
 .navbar-nav .nav-link {
-  color: #yellow;
+  color:  var(--text-dark);
   font-weight: 500;
   margin: 0 10px;
   transition: color 0.3s ease;
 }
 
 .navbar-nav .nav-link:hover {
-  color: #red;
+  color: var(--text-light);
 }
 
 /*
