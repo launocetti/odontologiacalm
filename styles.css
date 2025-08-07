@@ -22,7 +22,10 @@
 .main-container{
   background-image: url("../imagenes/fondo.jpg");
 */
-
+}
+.main-container{
+  background: #EED8C7;
+  background: linear-gradient(36deg,rgba(238, 216, 199, 1) 0%, rgba(246, 238, 232, 1) 50%, rgba(209, 217, 198, 1) 100%);
 }
 
 body {
@@ -30,8 +33,6 @@ body {
   line-height: 1.6;
   color: var(--text-dark);
   overflow-x: hidden;
-  background: #EED8C7;
-  background: linear-gradient(36deg,rgba(238, 216, 199, 1) 0%, rgba(246, 238, 232, 1) 50%, rgba(209, 217, 198, 1) 100%);
   /*
   background-image: url(""../imagenes/fondo.jpg");
   */
