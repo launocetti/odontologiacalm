@@ -83,7 +83,7 @@ h6 {
 
 /* Navbar */
 .navbar-custom {
-  background-color: #e8e0d5;
+  background-color: #d9ccba;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   padding: 15px 0;
 }
@@ -125,7 +125,7 @@ h6 {
 }
 
 .navbar-nav .nav-link:hover {
-  color: var(--primary-color);
+  color: #faf9f7;
 }
 
 .social-icons {
