@@ -127,7 +127,7 @@ h6 {
 .navbar-nav .nav-link:hover {
   color: var(--primary-color);
 }
-
+/*
 .social-icons {
   gap: 10px;
 }
@@ -144,11 +144,53 @@ h6 {
   text-decoration: none;
   transition: all 0.3s ease;
 }
-
 .social-icons a:hover {
   background-color: var(--secondary-color);
   transform: translateY(-2px);
 }
+*/
+
+.social-icons {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.social-icon a {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: var(--transition);
+  font-size: 1.25rem;
+}
+
+.social-icon.whatsapp {
+  background: linear-gradient(#D3AC92, #D7A486); /*var(--green-500);*/
+  color: var(--white);
+}
+
+.social-icon.whatsapp:hover {
+  background: linear-gradient(#D3AC92, #D4B7A4); /*var(--green-600);*/
+  transform: translateY(-2px);
+}
+
+.social-icon.instagram {
+  background: linear-gradient(#D3AC92, #D7A486); /*linear-gradient(135deg, var(--rose-400) 0%, var(--rose-500) 100%);*/
+  color: var(--white);
+}
+
+.social-icon.instagram:hover {
+  background: linear-gradient(#D3AC92, #D4B7A4); /*linear-gradient(135deg, var(--rose-500) 0%, var(--rose-600) 100%);*/
+  transform: translateY(-2px);
+}
+
+
+
+
+
 
 .btn-cita {
   white-space: nowrap;
