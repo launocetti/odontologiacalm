@@ -95,7 +95,11 @@ h6 {
 
 /* Navbar */
 .navbar-custom {
+  /*
   background-color: #d9ccba;
+  */
+  background: #6c8f42;
+  background: linear-gradient(349deg,rgba(108, 143, 66, 1) 0%, rgba(192, 201, 185, 1) 100%);
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   padding: 15px 0;
 }
