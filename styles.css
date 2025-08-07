@@ -10,36 +10,7 @@
   --success: #10b981;
   --warning: #f59e0b;
   --danger: #ef4444;
-  
-  /* Colores Arena */
-  --sand-50: #faf9f7;
-  --sand-100: #f5f2ed;
-  --sand-200: #e8e0d5;
-  --sand-300: #d9ccba;
-  --sand-400: #c8b59c;
-  --sand-500: #b8a082;
-  --sand-600: #a08c73;
-  --sand-700: #857360;
-  --sand-800: #6d5f52;
-  --sand-900: #594f44;
-
-  /* Colores Rosa Pastel */
-  --rose-50: #fdf2f8;
-  --rose-100: #fce7f3;
-  --rose-200: #fbcfe8;
-  --rose-300: #f9a8d4;
-  --rose-400: #f472b6;
-  --rose-500: #ec4899;
-  --rose-600: #db2777;
-  --rose-700: #be185d;
-  --rose-800: #9d174d;
-  --rose-900: #831843;
-
-  /* Otros colores */
-  --white: #ffffff;
-  --green-500: #10b981;
-  --green-600: #059669;
-
+}
 
 /* Reset y configuración base */
 * {
@@ -80,7 +51,7 @@ h6 {
 }
 
 .btn-primary {
-  background-color: linear-gradient(#D3AC92, #D7A486);
+  background-color: var(--primary-color);
   border-color: var(--primary-color);
   font-weight: 600;
   padding: 12px 24px;
@@ -89,15 +60,15 @@ h6 {
 }
 
 .btn-primary:hover {
-  background-color: linear-gradient(#D3AC92, #D4B7A4);
+  background-color: var(--secondary-color);
   border-color: var(--secondary-color);
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
 }
 
 .btn-outline-primary {
-  color: var(--sand-700);
-  border-color: var(--sand-700);
+  color: var(--primary-color);
+  border-color: var(--primary-color);
   font-weight: 600;
   padding: 12px 24px;
   border-radius: 8px;
@@ -105,13 +76,12 @@ h6 {
 }
 
 .btn-outline-primary:hover {
-  background-color: var(--sand-50);
-  border-color: var(--rose-300);
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
   transform: translateY(-2px);
 }
 
 /* Navbar */
-  
 .navbar-custom {
   background-color: var(--white);
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
@@ -184,9 +154,7 @@ h6 {
   white-space: nowrap;
 }
 
-  
 /* Hero Section */
-  
 .hero-section {
   background: linear-gradient(135deg, #eff6ff 0%, #ffffff 100%);
   padding: 120px 0 80px;
@@ -728,7 +696,5 @@ html {
   transform: translateY(-5px);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
 }
-
-
 
 
