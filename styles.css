@@ -290,7 +290,12 @@ html {
 
 /*
 
-/* Mobile Menu Button 
+
+
+
+*/
+
+/* Mobile Menu Button */
 .mobile-menu-btn {
   display: none;
   flex-direction: column;
@@ -303,7 +308,7 @@ html {
 }
 
 
-/* Mobile Responsive *
+/* Mobile Responsive */
 @media (max-width: 1023px) {
   .mobile-menu-btn {
     display: flex;
@@ -366,7 +371,7 @@ html {
     border-top: 1px solid var(--sand-200);
   }
 
-  /* Botón hamburguesa (oculto en desktop) 
+  /* Botón hamburguesa (oculto en desktop) */
 .mobile-menu-toggle {
     display: none;
     flex-direction: column;
@@ -386,7 +391,7 @@ html {
     border-radius: 2px;
 }
 
-/* Animación del botón hamburguesa 
+/* Animación del botón hamburguesa */
 .mobile-menu-toggle.active .hamburger-line:nth-child(1) {
     transform: rotate(-45deg) translate(-5px, 6px);
 }
@@ -462,7 +467,7 @@ html {
   }
 }
 
-/* Overlay for mobile menu 
+/* Overlay for mobile menu */
 @media (max-width: 1023px) {
   .navbar.active::before {
     content: "";
@@ -514,6 +519,11 @@ html {
     transform: rotate(45deg) translate(-5px, -6px);
     background-color: var(--white);
 }
+
+
+
+
+
 
 /* Desktop Navigation */
 .nav-desktop {
