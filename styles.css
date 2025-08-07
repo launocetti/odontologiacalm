@@ -168,7 +168,8 @@ h6 {
 
 /* Hero Section */
 .hero-section {
-  background: linear-gradient(135deg, #eff6ff 0%, #ffffff 100%);
+  background: #EED8C7;
+  background: linear-gradient(36deg,rgba(238, 216, 199, 1) 0%, rgba(246, 238, 232, 1) 50%, rgba(209, 217, 198, 1) 100%);
   padding: 120px 0 80px;
   position: relative;
   overflow: hidden;
