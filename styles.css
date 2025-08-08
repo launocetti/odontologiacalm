@@ -140,7 +140,7 @@ h6 {
 
 .navbar-nav .nav-link {
   color: var(--text-dark);
-  font-weight: 500;
+  font-weight: 600;
   margin: 0 10px;
   transition: color 0.3s ease;
 }
