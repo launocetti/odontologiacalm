@@ -24,8 +24,8 @@
 */
 }
 .main-container{
-  background: #EED8C7;
-  background: linear-gradient(36deg,rgba(238, 216, 199, 1) 0%, rgba(246, 238, 232, 1) 50%, rgba(209, 217, 198, 1) 100%);
+  background: #F6EEE8;
+  background: linear-gradient(90deg,rgba(246, 238, 232, 1) 0%, rgba(237, 213, 192, 1) 50%, rgba(209, 216, 198, 1) 100%);
 }
 
 body {
