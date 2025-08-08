@@ -339,12 +339,13 @@ h6 {
 }
 
 /* Team Cards */
-.team-card 
-/*
+.team-card {
+  /*
   background: white;
 */
-   background: #EED8C7;
+  background: #EED8C7;
   background: linear-gradient(36deg,rgba(238, 216, 199, 1) 0%, rgba(246, 238, 232, 1) 50%, rgba(209, 217, 198, 1) 100%);
+*/  
   padding: 2rem;
   border-radius: 12px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
