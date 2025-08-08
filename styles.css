@@ -173,7 +173,9 @@ h6 {
 /* Hero Section */
 .hero-section {
   background: #EED8C7;
+  /*
   background: linear-gradient(36deg,rgba(238, 216, 199, 1) 0%, rgba(246, 238, 232, 1) 50%, rgba(209, 217, 198, 1) 100%);
+  */
   padding: 120px 0 80px;
   position: relative;
   overflow: hidden;
@@ -298,11 +300,7 @@ h6 {
 }
 
 .service-icon {
-  background: #EED8C7;
-  background: linear-gradient(36deg,rgba(238, 216, 199, 1) 0%, rgba(246, 238, 232, 1) 50%, rgba(209, 217, 198, 1) 100%);
-  /*
   background: rgba(37, 99, 235, 0.1);
-  */
   color: var(--primary-color);
   width: 60px;
   height: 60px;
@@ -391,11 +389,7 @@ h6 {
 
 /* Horarios Cards */
 .horarios-card {
-  /*
   background: white;
-  */
-  background: #EED8C7;
-  background: linear-gradient(36deg,rgba(238, 216, 199, 1) 0%, rgba(246, 238, 232, 1) 50%, rgba(209, 217, 198, 1) 100%);
   padding: 3rem 2rem;
   border-radius: 12px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
@@ -422,6 +416,8 @@ h6 {
 
 .horarios-info i {
   color: var(--primary-color);
+  background: #EED8C7;
+  background: linear-gradient(36deg,rgba(238, 216, 199, 1) 0%, rgba(246, 238, 232, 1) 50%, rgba(209, 217, 198, 1) 100%);
 }
 
 /* Testimonial Cards */
@@ -457,6 +453,8 @@ h6 {
 /* Contact Section */
 .contact-info {
   margin-top: 2rem;
+  background: #EED8C7;
+  background: linear-gradient(36deg,rgba(238, 216, 199, 1) 0%, rgba(246, 238, 232, 1) 50%, rgba(209, 217, 198, 1) 100%);
 }
 
 .contact-item {
