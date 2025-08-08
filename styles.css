@@ -332,8 +332,12 @@ h6 {
 }
 
 /* Team Cards */
-.team-card {
+.team-card 
+/*
   background: white;
+*/
+   background: #EED8C7;
+  background: linear-gradient(36deg,rgba(238, 216, 199, 1) 0%, rgba(246, 238, 232, 1) 50%, rgba(209, 217, 198, 1) 100%);
   padding: 2rem;
   border-radius: 12px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
@@ -389,7 +393,11 @@ h6 {
 
 /* Horarios Cards */
 .horarios-card {
+  /*
   background: white;
+  */
+  background: #EED8C7;
+  background: linear-gradient(36deg,rgba(238, 216, 199, 1) 0%, rgba(246, 238, 232, 1) 50%, rgba(209, 217, 198, 1) 100%);
   padding: 3rem 2rem;
   border-radius: 12px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
@@ -416,45 +424,12 @@ h6 {
 
 .horarios-info i {
   color: var(--primary-color);
-  background: #EED8C7;
-  background: linear-gradient(36deg,rgba(238, 216, 199, 1) 0%, rgba(246, 238, 232, 1) 50%, rgba(209, 217, 198, 1) 100%);
 }
 
-/* Testimonial Cards */
-.testimonial-card {
-  background: white;
-  padding: 2rem;
-  border-radius: 12px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-  height: 100%;
-}
-
-.testimonial-stars {
-  color: #fbbf24;
-  margin-bottom: 1rem;
-}
-
-.testimonial-text {
-  font-style: italic;
-  color: var(--text-light);
-  margin-bottom: 1.5rem;
-  line-height: 1.6;
-}
-
-.testimonial-author strong {
-  color: var(--text-dark);
-  display: block;
-}
-
-.testimonial-author small {
-  color: var(--text-light);
-}
 
 /* Contact Section */
 .contact-info {
   margin-top: 2rem;
-  background: #EED8C7;
-  background: linear-gradient(36deg,rgba(238, 216, 199, 1) 0%, rgba(246, 238, 232, 1) 50%, rgba(209, 217, 198, 1) 100%);
 }
 
 .contact-item {
@@ -464,7 +439,11 @@ h6 {
 }
 
 .contact-icon {
+  /*
   background: rgba(37, 99, 235, 0.1);
+  */
+  background: #EED8C7;
+  background: linear-gradient(36deg,rgba(238, 216, 199, 1) 0%, rgba(246, 238, 232, 1) 50%, rgba(209, 217, 198, 1) 100%);
   color: var(--primary-color);
   width: 50px;
   height: 50px;
