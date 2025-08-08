@@ -60,7 +60,12 @@ h6 {
 }
 
 .bg-primary {
+  /*
   background-color: var(--primary-color) !important;
+  */
+  background: #F6EEE8;
+  background: linear-gradient(90deg,rgba(246, 238, 232, 1) 0%, rgba(237, 213, 192, 1) 38%, rgba(209, 216, 198, 1) 100%);
+  
 }
 
 .btn-primary {
