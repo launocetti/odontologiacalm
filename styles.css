@@ -498,7 +498,7 @@ h6 {
   margin-bottom: 0.5rem;
 }
 
-/* Footer */
+/* Footer 
 .footer-custom {
   background-color: #1f2937;
   color: white;
@@ -578,6 +578,31 @@ h6 {
   color: #9ca3af;
   margin: 0;
 }
+*/
+
+
+/* ===== FOOTER ===== */
+.footer-section {
+  background: var(--dark-color);
+}
+
+.footer-links {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.footer-links a {
+  color: var(--text-light);
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.footer-links a:hover {
+  color: var(--white);
+}
+
+
 
 /* Animations */
 .animate-fade-in {
