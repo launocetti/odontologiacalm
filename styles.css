@@ -503,8 +503,13 @@ h6 {
   background-color: #1f2937;
   color: white;
   padding: 60px 0 20px;
+  
+}
+
+.footer-section {
   background-color: #a6b79c;
 }
+
 
 .footer-content {
   display: grid;
