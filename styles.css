@@ -583,7 +583,7 @@ h6 {
 
 /* ===== FOOTER ===== */
 .footer-section {
-  background: var(--dark-color);
+  background-color: #a6b79c;
 }
 
 .footer-links {
