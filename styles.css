@@ -34,9 +34,8 @@ body {
   line-height: 1.6;
   color: var(--text-dark);
   overflow-x: hidden;
-  /*
-  background-image: url(""../imagenes/fondo.jpg");
-  */
+  background: #F6EEE8;
+  background: linear-gradient(90deg,rgba(246, 238, 232, 1) 0%, rgba(237, 213, 192, 1) 38%, rgba(209, 216, 198, 1) 100%);
 }
 
 h1,
