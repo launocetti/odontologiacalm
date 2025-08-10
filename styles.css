@@ -290,7 +290,7 @@ h6 {
 
 /* Service Cards */
 .service-card {
-  background: #white;
+  background: #ffffff;
   padding: 2rem;
   border-radius: 12px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
@@ -408,7 +408,7 @@ h6 {
 
 .horarios-icon {
   background: rgba(37, 99, 235, 0.1);
-  color: var(--primary-color);
+  color: #6d5f52;
   width: 80px;
   height: 80px;
   border-radius: 50%;
@@ -426,7 +426,7 @@ h6 {
 }
 
 .horarios-info i {
-  color: var(--primary-color);
+  color: #6d5f52;
 }
 
 
