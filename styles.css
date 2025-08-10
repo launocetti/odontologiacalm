@@ -290,7 +290,7 @@ h6 {
 
 /* Service Cards */
 .service-card {
-  background: #ecfde2;
+  background: #white;
   padding: 2rem;
   border-radius: 12px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
@@ -388,7 +388,7 @@ h6 {
 }
 
 .team-specialty {
-  color: var(--primary-color);
+  color: #99ae8a;
   font-weight: 600;
   margin-bottom: 0.5rem;
 }
