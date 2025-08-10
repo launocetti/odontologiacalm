@@ -437,6 +437,8 @@ h6 {
 /* Contact Section */
 .contact-info {
   margin-top: 2rem;
+  background: #F6EEE8;
+  background: linear-gradient(90deg,rgba(246, 238, 232, 1) 0%, rgba(237, 213, 192, 1) 38%, rgba(209, 216, 198, 1) 100%);
 }
 
 .contact-item {
@@ -586,6 +588,7 @@ h6 {
 /* ===== FOOTER ===== */
 .footer-section {
   background-color: #a6b79c;
+  color: var(--text-dark);
 }
 
 .footer-links {
