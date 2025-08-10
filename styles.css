@@ -373,7 +373,7 @@ h6 {
   bottom: -10px;
   left: 50%;
   transform: translateX(-50%);
-  background: var(--secondary color);
+  background:#6d5f52;
   color: white;
   padding: 4px 12px;
   border-radius: 20px;
