@@ -18,13 +18,8 @@
   padding: 0;
   box-sizing: border-box;
 }
-/*
-.main-container{
-  background-image: url("../imagenes/fondo.jpg");
-*/
-}
-.main-container{
 
+.main-container{
   background: #F6EEE8;
   background: linear-gradient(90deg,rgba(246, 238, 232, 1) 0%, rgba(237, 213, 192, 1) 38%, rgba(209, 216, 198, 1) 100%);
 }
@@ -67,8 +62,8 @@ h6 {
 }
 
 .btn-primary {
-  background-color: var(--primary-color);
-  border-color: var(--primary-color);
+  background: #DDA787;
+  background: radial-gradient(circle,rgba(221, 167, 135, 1) 0%, rgba(236, 207, 186, 1) 100%);
   font-weight: 600;
   padding: 12px 24px;
   border-radius: 8px;
@@ -76,15 +71,15 @@ h6 {
 }
 
 .btn-primary:hover {
-  background-color: var(--secondary-color);
-  border-color: var(--secondary-color);
+  background: #f5d0ba;
+  background: radial-gradient(circle,rgba(245, 208, 186, 1) 0%, rgba(247, 227, 213, 1) 100%);
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
 }
 
 .btn-outline-primary {
-  color: var(--primary-color);
-  border-color: var(--primary-color);
+  background: #DDA787;
+  background: radial-gradient(circle,rgba(221, 167, 135, 1) 0%, rgba(236, 207, 186, 1) 100%);
   font-weight: 600;
   padding: 12px 24px;
   border-radius: 8px;
@@ -92,14 +87,16 @@ h6 {
 }
 
 .btn-outline-primary:hover {
-  background-color: var(--primary-color);
-  border-color: var(--primary-color);
+  background: #f5d0ba;
+  background: radial-gradient(circle,rgba(245, 208, 186, 1) 0%, rgba(247, 227, 213, 1) 100%);
   transform: translateY(-2px);
 }
 
 /* Navbar */
 .navbar-custom {
   background-color: #a6b79c;
+
+  
   /*
   background: #DDA787;
   background: linear-gradient(173deg,rgba(221, 167, 135, 1) 0%, rgba(156, 181, 145, 1) 100%);
@@ -205,8 +202,12 @@ h6 {
 
 .badge-custom {
   display: inline-block;
+  /*
   background-color: rgba(37, 99, 235, 0.1);
   color: var(--primary-color);
+  */
+  background: #F6EEE8;
+  background: linear-gradient(90deg,rgba(246, 238, 232, 1) 0%, rgba(237, 213, 192, 1) 38%, rgba(209, 216, 198, 1) 100%);
   padding: 8px 16px;
   border-radius: 20px;
   font-size: 0.9rem;
