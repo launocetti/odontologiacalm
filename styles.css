@@ -227,6 +227,11 @@ h6 {
   line-height: 1.6;
 }
 
+.gradient-text{
+
+  color: #f8baa3;
+}
+
 .hero-buttons {
   margin-top: 2rem;
 }
