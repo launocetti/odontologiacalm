@@ -175,8 +175,12 @@ h6 {
 
   background: #f5e1d0;
   background: linear-gradient(0deg,rgba(245, 225, 208, 1) 0%, rgba(246, 238, 232, 1) 100%);
- */
+
   background: #ffffff;
+
+  */
+  background: linear-gradient(135deg, var(--rose-100) 0%, var(--sand-100) 100%);
+
   padding: 120px 0 80px;
   position: relative;
   overflow: hidden;
