@@ -181,7 +181,7 @@ h6 {
   background: #fff3ef;
 
 */
-  background: #e94508;
+  background: #ffeee7;
 
   padding: 120px 0 80px;
   position: relative;
@@ -212,9 +212,6 @@ h6 {
  
   background: #F6EEE8;
   background: linear-gradient(90deg,rgba(246, 238, 232, 1) 0%, rgba(237, 213, 192, 1) 38%, rgba(209, 216, 198, 1) 100%);
-
-  background: linear-gradient(135deg, var(--rose-100) 0%, var(--sand-100) 100%);
-
   */
   
   padding: 8px 16px;
@@ -260,11 +257,6 @@ h6 {
   position: absolute;
   bottom: -20px;
   left: -20px;
-  
-/*
-  background: linear-gradient(135deg, var(--rose-100) 0%, var(--sand-100) 100%);
-*/
-  
   padding: 20px;
   border-radius: 12px;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
