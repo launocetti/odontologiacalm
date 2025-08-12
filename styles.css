@@ -181,7 +181,6 @@ h6 {
   background: #fff3ef;
 
 */
-  background: #red;
 
   padding: 120px 0 80px;
   position: relative;
@@ -216,6 +215,10 @@ h6 {
   background: linear-gradient(135deg, var(--rose-100) 0%, var(--sand-100) 100%);
 
   */
+
+  background: #red;
+
+  
   padding: 8px 16px;
   border-radius: 20px;
   font-size: 0.9rem;
