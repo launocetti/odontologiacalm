@@ -44,7 +44,7 @@ h6 {
   line-height: 1.2;
 }
 
-/* Utilidades */
+/* Utilidades color fondo */
 .section-padding {
   padding: 80px 0;
   background: #F6EEE8;
@@ -62,6 +62,8 @@ h6 {
   background: linear-gradient(90deg,rgba(246, 238, 232, 1) 0%, rgba(237, 213, 192, 1) 38%, rgba(209, 216, 198, 1) 100%);
   */
 }
+
+/* colores botones grandes */
 
 .btn-primary {
   background: #DDA787;
@@ -167,18 +169,18 @@ h6 {
   white-space: nowrap;
 }
 
-/* Hero Section */
+/* Hero Section  color hero*/
 .hero-section {
   /*
   background: #F6EEE8;
   background: linear-gradient(90deg,rgba(246, 238, 232, 1) 0%, rgba(237, 213, 192, 1) 38%, rgba(209, 216, 198, 1) 100%);
-*/
+
   background: #f5e1d0;
   background: linear-gradient(0deg,rgba(245, 225, 208, 1) 0%, rgba(246, 238, 232, 1) 100%);
-/*
-  background: #ffffff;
+*/
+  background: #fff3ef;
 
-  */
+
   
 
   padding: 120px 0 80px;
