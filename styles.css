@@ -417,7 +417,7 @@ button {
 .hero-scroll svg { width: 20px; height: 20px; color: rgba(255,255,255,0.4); }
 
 
-@media (min-width: 640px)  and (max-width: 768px) {
+@media (min-width: 640px)  {
   .hero-buttons { flex-direction: row; }
   .hero-content { padding: 8rem 0 6rem; }
 }
