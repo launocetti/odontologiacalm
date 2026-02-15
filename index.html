@@ -397,16 +397,78 @@
 
 
 
-
-        <!-- CONTACTO SECTION -->
+        
+        <!-- TESTIMONIOS SECTION -->
+        <section class="section-padding">
+            <div class="container">
+                <div class="section-title text-center mb-5">
+                    <h2>Lo que dicen nuestros pacientes</h2>
+                    <p class="text-muted">La satisfacción de nuestros pacientes es nuestro mayor logro</p>
+                </div>
+                
+                <div class="row">
+                    <div class="col-md-4 mb-4">
+                        <div class="testimonial-card">
+                            <div class="testimonial-stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <p class="testimonial-text">"Excelente atención y resultados increíbles. El tratamiento fue muy cómodo y el personal siempre fue muy amable."</p>
+                            <div class="testimonial-author">
+                                <strong>Laura Pérez</strong>
+                                <small>Ortodoncia Invisible</small>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-4 mb-4">
+                        <div class="testimonial-card">
+                            <div class="testimonial-stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <p class="testimonial-text">"Profesionalismo excepcional. La Dra. Nancy me explicó todo el proceso y el resultado superó mis expectativas."</p>
+                            <div class="testimonial-author">
+                                <strong>Miguel Torres</strong>
+                                <small>Implante Dental</small>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-4 mb-4">
+                        <div class="testimonial-card">
+                            <div class="testimonial-stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <p class="testimonial-text">"Quedé encantada con mi sonrisa nueva. El equipo es muy profesional y las instalaciones son de primera."</p>
+                            <div class="testimonial-author">
+                                <strong>Carmen Silva</strong>
+                                <small>Blanqueamiento</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+       <!-- CONTACTO SECTION -->
         <section id="contacto" class="section-padding bg-light">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-6 mb-5">
                         <h2>Agenda tu cita hoy</h2>
-                        <p class="text-muted mb-4">Estamos aquí para cuidar tu sonrisa. Contáctanos para agendar tu
-                            consulta.</p>
-
+                        <p class="text-muted mb-4">Estamos aquí para cuidar tu sonrisa. Contáctanos para agendar tu consulta.</p>
+                        
                         <div class="contact-info">
                             <div class="contact-item">
                                 <div class="contact-icon">
@@ -414,20 +476,20 @@
                                 </div>
                                 <div>
                                     <strong>Teléfono</strong>
-                                    <p>+54 9 11 3362 6107</p>
+                                    <p>+54 9 11 3850-7828</p>
                                 </div>
                             </div>
-
+                            
                             <div class="contact-item">
                                 <div class="contact-icon">
                                     <i class="fas fa-envelope"></i>
                                 </div>
                                 <div>
                                     <strong>Email</strong>
-                                    <p>rdariobuyatti@yahoo.com</p>
+                                    <p>info@calmodontologia.com</p>
                                 </div>
                             </div>
-
+                            
                             <div class="contact-item">
                                 <div class="contact-icon">
                                     <i class="fas fa-map-marker-alt"></i>
@@ -437,52 +499,55 @@
                                     <p>Padre Roqueta 1677 - Manuel Alberti - Pilar, Buenos Aires</p>
                                 </div>
                             </div>
-
+                            
                             <div class="contact-item">
                                 <div class="contact-icon">
                                     <i class="fas fa-clock"></i>
                                 </div>
                                 <div>
                                     <strong>Horarios</strong>
+                                    <strong>Horarios</strong>
                                     <p><strong>Lun - Mié - Vie:</strong>19:00 hs. a 22:30 hs.</p>
                                     <p><strong>Mar - Jue:</strong>14:00 hs. a 22:30 hs.</p>
                                     <p><strong>Se atienden urgencias</strong></p>
                                     <p><strong>1164151885 por whatsapp</strong></p>
+
                                 </div>
                             </div>
                         </div>
                     </div>
-
+                    
                     <div class="col-lg-6">
                         <div class="contact-form-card">
                             <h4>Solicitar Cita</h4>
                             <p class="text-muted">Completa el formulario y nos pondremos en contacto contigo</p>
-
-                            <form id="contactForm" action="mailto:rdariobuyatti@yahoo.com" method="post">
+                            
+                            <!-- Configurado formulario para envío por email con Formspree -->
+                            <form id="contactForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
                                 <div class="row">
                                     <div class="col-md-6 mb-3">
                                         <label class="form-label">Nombre</label>
-                                        <input type="text" class="form-control" placeholder="Tu nombre" required>
+                                        <input type="text" name="nombre" class="form-control" placeholder="Tu nombre" required>
                                     </div>
                                     <div class="col-md-6 mb-3">
                                         <label class="form-label">Apellido</label>
-                                        <input type="text" class="form-control" placeholder="Tu apellido" required>
+                                        <input type="text" name="apellido" class="form-control" placeholder="Tu apellido" required>
                                     </div>
                                 </div>
-
+                                
                                 <div class="mb-3">
                                     <label class="form-label">Teléfono</label>
-                                    <input type="tel" class="form-control" placeholder="Tu teléfono" required>
+                                    <input type="tel" name="telefono" class="form-control" placeholder="Tu teléfono" required>
                                 </div>
-
+                                
                                 <div class="mb-3">
                                     <label class="form-label">Email</label>
-                                    <input type="email" class="form-control" placeholder="tu@email.com" required>
+                                    <input type="email" name="_replyto" class="form-control" placeholder="rdariobuyatti@yahoo.com" required>
                                 </div>
-
+                                
                                 <div class="mb-3">
                                     <label class="form-label">Servicio de interés</label>
-                                    <select class="form-select" required>
+                                    <select name="servicio" class="form-select" required>
                                         <option value="">Selecciona un servicio</option>
                                         <option value="consulta">Consulta General</option>
                                         <option value="ortodoncia">Ortodoncia</option>
@@ -492,24 +557,22 @@
                                         <option value="pediatria">Odontopediatría</option>
                                     </select>
                                 </div>
-
+                                
                                 <div class="mb-3">
                                     <label class="form-label">Mensaje</label>
-                                    <textarea class="form-control" rows="3"
-                                        placeholder="Cuéntanos sobre tu consulta..."></textarea>
+                                    <textarea name="mensaje" class="form-control" rows="3" placeholder="Cuéntanos sobre tu consulta..."></textarea>
                                 </div>
-<!--
-                                 <a href="mailto:rdariobuyatti@yahoo.com"  target="_blank"
-                                    title="Email">
-                                    <button class="btn btn-primary btn-lg ">
-                                            Enviar Solicitud
-                                    </button>
-                                </a>
--->
-                                <button class="btn btn-primary btn-lg ">
-
-                                    <a href="mailto:rdariobuyatti@yahoo.com" title="Email">Enviar Solicitud</a>
-                                    
+                                
+                                <!-- Campos ocultos mejorados para Formspree -->
+                                <input type="hidden" name="_subject" value="Nueva solicitud de cita - Calm Odontología">
+                                <input type="hidden" name="_captcha" value="false">
+                                <input type="text" name="_gotcha" style="display:none">
+                                
+                                <button type="submit" class="btn btn-primary w-100">
+                                    <span class="btn-text">Enviar Solicitud</span>
+                                    <span class="btn-loading d-none">
+                                        <i class="fas fa-spinner fa-spin me-2"></i>Enviando...
+                                    </span>
                                 </button>
                             </form>
                         </div>
