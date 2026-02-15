@@ -421,6 +421,18 @@ button {
   .hero-content { padding: 8rem 0 6rem; }
 }
 
+@media (max-width: 768px) {
+
+  .hero {
+    min-height: 100svh; 
+  }
+
+  .hero-img {
+    height: 100svh;
+    object-position: center center; 
+  }
+}
+
 /* ============================================
    ABOUT SECTION
    ============================================ */
