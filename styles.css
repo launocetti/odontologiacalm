@@ -289,7 +289,13 @@ button {
   width: 100%;
   height: 100%;
   object-fit: cover;
+    /* Mejora visual */
+  filter: brightness(1.08) contrast(1.05) saturate(1.05);
+  image-rendering: -webkit-optimize-contrast;
+
+  transform: scale(1.02); /* evita blur por subpixel */
 }
+
 .hero-overlay {
   position: absolute;
   inset: 0;
