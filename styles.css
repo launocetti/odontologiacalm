@@ -416,14 +416,28 @@ button {
 .hero-scroll svg { width: 20px; height: 20px; color: rgba(255,255,255,0.4); }
 
 
+
 @media (min-width: 640px)  {
   .hero-buttons { flex-direction: row; }
   .hero-content { padding: 8rem 0 6rem; }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 480px) {
+  .hero h1 {
+    font-size: 1.7rem; }
+   .hero-img {
+    height: 100svh;
+    object-position: center center; }
+  .hero-desc {
+    font-size: .95rem; }
+  .hero-badge {
+    font-size: .85rem;}
+}
 
-  .hero {
+@media (max-width: 768px) {
+  .section-padding {
+    padding: 2rem 0;
+   .hero {
     min-height: 100svh; 
   }
 
@@ -432,6 +446,7 @@ button {
     object-position: center center; 
   }
 }
+
 
 /* ============================================
    ABOUT SECTION
