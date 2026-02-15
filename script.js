@@ -1,220 +1,183 @@
-document.addEventListener('DOMContentLoaded', function() {
-    const mobileMenuToggle = document.getElementById('mobileMenuToggle');
-    const navMobile = document.getElementById('navMobile');
-    const body = document.body;
-    const header = document.querySelector('.header');
-    
-    // Toggle del menú móvil
-    if (mobileMenuToggle && navMobile) {
-        mobileMenuToggle.addEventListener('click', function(e) {
-            e.stopPropagation(); // Evita que el clic se propague y cierre el menú inmediatamente
-            toggleMobileMenu();
-        });
-        
-        // Función para toggle del menú
-        function toggleMobileMenu() {
-            const isActive = mobileMenuToggle.classList.contains('active');
-            
-            if (isActive) {
-                closeMobileMenu();
-            } else {
-                openMobileMenu();
-            }
-        }
-        
-        // Abrir menú móvil
-        function openMobileMenu() {
-            mobileMenuToggle.classList.add('active');
-            navMobile.classList.add('active');
-            body.classList.add('menu-open');
-        }
-        
-        // Cerrar menú móvil
-        function closeMobileMenu() {
-            mobileMenuToggle.classList.remove('active');
-            navMobile.classList.remove('active');
-            body.classList.remove('menu-open');
-        }
-        
-        // Cerrar menú al hacer click en un enlace móvil y realizar smooth scroll
-        document.querySelectorAll('.nav-mobile-link').forEach(link => {
-            link.addEventListener('click', function(e) {
-                e.preventDefault(); // Previene el comportamiento por defecto del enlace
-                
-                // Cierra el menú inmediatamente
-                closeMobileMenu();
-                
-                // Espera un breve momento para que la transición del menú se inicie antes de hacer scroll
-                setTimeout(() => {
-                    const targetId = this.getAttribute('href');
-                    const target = document.querySelector(targetId);
-                    if (target) {
-                        const headerHeight = header.offsetHeight;
-                        // Ajusta el offset para que la sección no quede oculta por el header fijo
-                        const targetPosition = target.offsetTop - headerHeight - 20; 
-                        
-                        window.scrollTo({
-                            top: targetPosition,
-                            behavior: 'smooth'
-                        });
-                    }
-                }, 100); // Pequeño retraso de 100ms
-            });
-        });
-        
-        // Cerrar menú al hacer click en el overlay (fuera del contenido del menú)
-        navMobile.addEventListener('click', function(e) {
-            if (e.target === navMobile) { // Solo si el clic es directamente en el fondo del nav-mobile
-                closeMobileMenu();
-            }
-        });
-        
-        // Cerrar menú con tecla Escape
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape' && navMobile.classList.contains('active')) {
-                closeMobileMenu();
-            }
-        });
-        
-        // Cerrar menú al redimensionar ventana (si pasa de móvil a desktop)
-        window.addEventListener('resize', function() {
-            if (window.innerWidth > 768 && navMobile.classList.contains('active')) {
-                closeMobileMenu();
-            }
-        });
+/* ============================================
+   CALM Odontología — script.js
+   Interactividad: Navbar, Scroll animations,
+   Counters, Testimonials, FAQ, Mobile menu
+   ============================================ */
+
+document.addEventListener('DOMContentLoaded', function () {
+
+  // ---- NAVBAR SCROLL EFFECT ----
+  const navbar = document.querySelector('.navbar');
+  window.addEventListener('scroll', function () {
+    if (window.scrollY > 40) {
+      navbar.classList.add('scrolled');
+    } else {
+      navbar.classList.remove('scrolled');
     }
-    
-    // Navbar scroll effect (cambia el estilo del header al hacer scroll)
-    window.addEventListener('scroll', function() {
-        if (window.scrollY > 50) {
-            header.classList.add('scrolled');
-        } else {
-            header.classList.remove('scrolled');
-        }
+  }, { passive: true });
+
+  // ---- MOBILE MENU ----
+  const navToggle = document.querySelector('.nav-toggle');
+  const mobileMenu = document.querySelector('.mobile-menu');
+  const navIcon = document.getElementById('nav-icon');
+
+  navToggle.addEventListener('click', function () {
+    const isOpen = mobileMenu.classList.toggle('open');
+    navIcon.innerHTML = isOpen
+      ? '<line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line>'
+      : '<line x1="4" y1="12" x2="20" y2="12"></line><line x1="4" y1="6" x2="20" y2="6"></line><line x1="4" y1="18" x2="20" y2="18"></line>';
+  });
+
+  // Close mobile menu on link click
+  mobileMenu.querySelectorAll('a').forEach(function (link) {
+    link.addEventListener('click', function () {
+      mobileMenu.classList.remove('open');
+      navIcon.innerHTML = '<line x1="4" y1="12" x2="20" y2="12"></line><line x1="4" y1="6" x2="20" y2="6"></line><line x1="4" y1="18" x2="20" y2="18"></line>';
     });
-    
-    // Smooth scrolling para los enlaces de escritorio (si los tienes, si no, se puede eliminar)
-    // Este listener es para los enlaces que no son del menú móvil, para evitar conflictos.
-    document.querySelectorAll('.nav-desktop .nav-link').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
-            if (target) {
-                const headerHeight = header.offsetHeight;
-                const targetPosition = target.offsetTop - headerHeight - 20;
-                
-                window.scrollTo({
-                    top: targetPosition,
-                    behavior: 'smooth'
-                });
-            }
-        });
-    });
-    
-    // Highlight active nav link (resalta el enlace de la sección actual)
-    function highlightActiveNavLink() {
-        const sections = document.querySelectorAll('section[id]');
-        
-        let current = '';
-        sections.forEach(section => {
-            const sectionTop = section.offsetTop;
-            const sectionHeight = section.clientHeight;
-            // Ajusta el offset para que el highlight sea preciso
-            if (window.scrollY >= (sectionTop - header.offsetHeight - 100)) {
-                current = section.getAttribute('id');
-            }
-        });
-        
-        // Resalta enlaces de desktop
-        document.querySelectorAll('.nav-desktop .nav-link').forEach(link => {
-            link.classList.remove('active');
-            if (link.getAttribute('href') === `#${current}`) {
-                link.classList.add('active');
-            }
-        });
+  });
 
-        // Resalta enlaces de móvil
-        document.querySelectorAll('.nav-mobile-link').forEach(link => {
-            link.classList.remove('active');
-            if (link.getAttribute('href') === `#${current}`) {
-                link.classList.add('active');
-            }
-        });
-    }
-
-
-     // Send form data to Formspree
-  fetch(this.action, {
-    method: "POST",
-    body: formData,
-    headers: {
-      Accept: "application/json",
-    },
-  })
-    .then((response) => {
-      if (response.ok) {
-        // Show success message
-        showNotification("¡Mensaje enviado correctamente! Nos pondremos en contacto contigo pronto.", "success")
-
-        // Reset form
-        this.reset()
-
-        // Optional: Redirect to WhatsApp as confirmation
-        setTimeout(() => {
-          const phone = "5491133626107"
-          const nombre = formData.get("nombre") || ""
-          const apellido = formData.get("apellido") || ""
-          const message = `Hola, soy ${nombre} ${apellido}. Acabo de enviar una solicitud de cita a través del formulario web. ¡Espero su respuesta!`
-
-          if (confirm("¿Te gustaría confirmar tu solicitud también por WhatsApp?")) {
-            window.open(`https://api.whatsapp.com/send?phone=${phone}&text=${encodeURIComponent(message)}`, "_blank")
-          }
-        }, 2000)
-      } else {
-        response.json().then((data) => {
-          if (data.errors) {
-            throw new Error(data.errors.map((error) => error.message).join(", "))
-          } else {
-            throw new Error("Error en el envío")
-          }
-        })
+  // ---- SMOOTH SCROLL FOR NAV LINKS ----
+  document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
+    anchor.addEventListener('click', function (e) {
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth' });
       }
-    })
-    .catch((error) => {
-      console.error("Error:", error)
-      showNotification(
-        "Hubo un error al enviar el mensaje. Por favor, intenta nuevamente o contáctanos por WhatsApp.",
-        "error",
-      )
+    });
+  });
 
-      // Fallback to WhatsApp
-      setTimeout(() => {
-        const phone = "5491133626107"
-        const nombre = formData.get("nombre") || ""
-        const apellido = formData.get("apellido") || ""
-        const servicio = formData.get("servicio") || ""
-        const mensaje = formData.get("mensaje") || ""
+  // ---- SCROLL ANIMATIONS ----
+  const animElements = document.querySelectorAll('.animate-on-scroll');
+  const observer = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
 
-        const whatsappMessage = `Hola, soy ${nombre} ${apellido}. Me interesa el servicio de ${servicio}. ${mensaje}`
+  animElements.forEach(function (el) {
+    observer.observe(el);
+  });
 
-        if (confirm("El formulario no pudo enviarse. ¿Te gustaría contactarnos por WhatsApp?")) {
-          window.open(
-            `https://api.whatsapp.com/send?phone=${phone}&text=${encodeURIComponent(whatsappMessage)}`,
-            "_blank",
-          )
+  // Staggered animations for cards
+  document.querySelectorAll('.stagger-children').forEach(function (parent) {
+    var children = parent.querySelectorAll('.stagger-item');
+    var staggerObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          children.forEach(function (child, i) {
+            setTimeout(function () {
+              child.classList.add('visible');
+            }, i * 80);
+          });
+          staggerObserver.unobserve(entry.target);
         }
-      }, 1000)
-    })
-    .finally(() => {
-      // Reset button state
-      btnText.classList.remove("d-none")
-      btnLoading.classList.add("d-none")
-      submitBtn.disabled = false
-    })
-})
+      });
+    }, { threshold: 0.1 });
+    staggerObserver.observe(parent);
+  });
 
-    
-    // Llama a la función de highlight al cargar y al hacer scroll
-    window.addEventListener('scroll', highlightActiveNavLink);
-    highlightActiveNavLink(); // Llamada inicial
+  // ---- COUNTER ANIMATION ----
+  var statsSection = document.querySelector('.stats');
+  var countersAnimated = false;
+
+  function animateCounter(el, end, duration) {
+    var start = 0;
+    var startTime = null;
+    function step(currentTime) {
+      if (!startTime) startTime = currentTime;
+      var elapsed = currentTime - startTime;
+      var progress = Math.min(elapsed / duration, 1);
+      var easeOut = 1 - Math.pow(1 - progress, 3);
+      var current = Math.floor(easeOut * end);
+      el.textContent = (el.dataset.prefix || '') + current.toLocaleString('es-AR') + (el.dataset.suffix || '');
+      if (progress < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+
+  var statsObserver = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting && !countersAnimated) {
+        countersAnimated = true;
+        document.querySelectorAll('.counter').forEach(function (counter) {
+          var end = parseInt(counter.dataset.end, 10);
+          var duration = parseInt(counter.dataset.duration || '2000', 10);
+          animateCounter(counter, end, duration);
+        });
+      }
+    });
+  }, { threshold: 0.3 });
+
+  if (statsSection) statsObserver.observe(statsSection);
+
+  // ---- TESTIMONIALS CAROUSEL ----
+  var testimonials = [
+    {
+      text: 'Excelente atención!! Fui sábado casi noche y resolvieron mi urgencia con mucho profesionalismo.',
+      author: 'Miriam Biot',
+      service: 'Urgencia Odontológica'
+    },
+    {
+      text: 'Una genia la doctora. Y la atención desde que llegás impecable. Súper recomendable.',
+      author: 'Rocío Espíndola',
+      service: 'Tratamiento de Caries'
+    },
+    {
+      text: 'Llegamos un domingo, con una urgencia y nos atendieron en forma excelente. Muy recomendable por trato y profesionalidad. Gracias.',
+      author: 'Oscar Bruno Manzur',
+      service: 'Urgencia Odontológica'
+    }
+  ];
+  var currentTestimonial = 0;
+  var testimonialText = document.getElementById('testimonial-text');
+  var testimonialAuthor = document.getElementById('testimonial-author');
+  var testimonialService = document.getElementById('testimonial-service');
+  var dots = document.querySelectorAll('.testimonial-dot');
+
+  function showTestimonial(index) {
+    currentTestimonial = index;
+    if (testimonialText) {
+      testimonialText.textContent = '"' + testimonials[index].text + '"';
+      testimonialAuthor.textContent = testimonials[index].author;
+      testimonialService.textContent = testimonials[index].service;
+    }
+    dots.forEach(function (dot, i) {
+      dot.classList.toggle('active', i === index);
+    });
+  }
+
+  var btnPrev = document.getElementById('testimonial-prev');
+  var btnNext = document.getElementById('testimonial-next');
+  if (btnPrev) {
+    btnPrev.addEventListener('click', function () {
+      showTestimonial((currentTestimonial - 1 + testimonials.length) % testimonials.length);
+    });
+  }
+  if (btnNext) {
+    btnNext.addEventListener('click', function () {
+      showTestimonial((currentTestimonial + 1) % testimonials.length);
+    });
+  }
+  dots.forEach(function (dot, i) {
+    dot.addEventListener('click', function () { showTestimonial(i); });
+  });
+
+  // ---- FAQ ACCORDION ----
+  document.querySelectorAll('.faq-question').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var item = this.parentElement;
+      var isOpen = item.classList.contains('open');
+      // Close all
+      document.querySelectorAll('.faq-item').forEach(function (faq) {
+        faq.classList.remove('open');
+      });
+      // Toggle current
+      if (!isOpen) item.classList.add('open');
+    });
+  });
+
 });
