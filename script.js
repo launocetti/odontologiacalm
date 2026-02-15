@@ -141,6 +141,78 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
+
+
+     // Send form data to Formspree
+  fetch(this.action, {
+    method: "POST",
+    body: formData,
+    headers: {
+      Accept: "application/json",
+    },
+  })
+    .then((response) => {
+      if (response.ok) {
+        // Show success message
+        showNotification("¡Mensaje enviado correctamente! Nos pondremos en contacto contigo pronto.", "success")
+
+        // Reset form
+        this.reset()
+
+        // Optional: Redirect to WhatsApp as confirmation
+        setTimeout(() => {
+          const phone = "5491133626107"
+          const nombre = formData.get("nombre") || ""
+          const apellido = formData.get("apellido") || ""
+          const message = `Hola, soy ${nombre} ${apellido}. Acabo de enviar una solicitud de cita a través del formulario web. ¡Espero su respuesta!`
+
+          if (confirm("¿Te gustaría confirmar tu solicitud también por WhatsApp?")) {
+            window.open(`https://api.whatsapp.com/send?phone=${phone}&text=${encodeURIComponent(message)}`, "_blank")
+          }
+        }, 2000)
+      } else {
+        response.json().then((data) => {
+          if (data.errors) {
+            throw new Error(data.errors.map((error) => error.message).join(", "))
+          } else {
+            throw new Error("Error en el envío")
+          }
+        })
+      }
+    })
+    .catch((error) => {
+      console.error("Error:", error)
+      showNotification(
+        "Hubo un error al enviar el mensaje. Por favor, intenta nuevamente o contáctanos por WhatsApp.",
+        "error",
+      )
+
+      // Fallback to WhatsApp
+      setTimeout(() => {
+        const phone = "5491133626107"
+        const nombre = formData.get("nombre") || ""
+        const apellido = formData.get("apellido") || ""
+        const servicio = formData.get("servicio") || ""
+        const mensaje = formData.get("mensaje") || ""
+
+        const whatsappMessage = `Hola, soy ${nombre} ${apellido}. Me interesa el servicio de ${servicio}. ${mensaje}`
+
+        if (confirm("El formulario no pudo enviarse. ¿Te gustaría contactarnos por WhatsApp?")) {
+          window.open(
+            `https://api.whatsapp.com/send?phone=${phone}&text=${encodeURIComponent(whatsappMessage)}`,
+            "_blank",
+          )
+        }
+      }, 1000)
+    })
+    .finally(() => {
+      // Reset button state
+      btnText.classList.remove("d-none")
+      btnLoading.classList.add("d-none")
+      submitBtn.disabled = false
+    })
+})
+
     
     // Llama a la función de highlight al cargar y al hacer scroll
     window.addEventListener('scroll', highlightActiveNavLink);
