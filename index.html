@@ -1,626 +1,572 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CALM Odontología - Dra Nanci Briner</title>
-    <meta name="description"
-        content="CALM Odontología - Centro odontológico profesional con la Dra Nanci Briner en Manuel Alberti, Pilar. Atención personalizada.">
-
-    <!-- Google tag (gtag.js) -->
-    <script async src=""></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-    
-      gtag('config', 'AW-17439565835');
-    </script>
-
-    <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="/imagenes/logo.png?height=32&width=32"
-        class="img-fluid rounded-circle" />
-
-    <!-- Bootstrap 5 -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Libertinus+Serif:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Spectral:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap"
-        rel="stylesheet">
-
-    <!-- CSS Personalizado -->
-    <link href="styles.css" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CALM Odontología | Odontología con Conciencia | Pilar, Buenos Aires</title>
+  <meta name="description" content="CALM Odontología - Centro odontológico con más de 20 años de experiencia en Manuel Alberti, Pilar. Prótesis dentales, ortodoncia, endodoncia, urgencias 24/7. Laboratorio dental propio." />
+  <meta name="keywords" content="dentista pilar, odontólogo manuel alberti, prótesis dentales, ortodoncia, urgencias dentales, CALM odontología" />
+  <meta property="og:title" content="CALM Odontología | Odontología con Conciencia" />
+  <meta property="og:description" content="Centro odontológico con más de 20 años de experiencia. Prótesis, ortodoncia, endodoncia y urgencias 24/7." />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Source+Sans+3:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
 </head>
-
 <body>
-    <div class="main-container">
 
-        <!-- NAVBAR RESPONSIVO -->
-        <nav class="navbar navbar-expand-lg navbar-custom sticky-top">
-            <div class="container">
-                <!-- Logo -->
-                <a class="navbar-brand" href="#inicio">
-                    <div class="logo-container">
-                        <img style="height:20%;width: 20%; max-width: 50px; min-height: 10px; height: auto; border-radius: 50%; margin-bottom: 1%;"
-                            class="img-responsive " class="ms-5 " src="../imagenes/logo.png" alt="png" />
-                        <div>
-                            <h5 class="mb-0">CALM Odontología</h5>
-                            <h5 class="mb-0">Dra. Nanci Briner</h5>
-                        </div>
-                    </div>
-                </a>
+<!-- ============================================
+     NAVBAR
+     ============================================ -->
+<nav class="navbar" id="navbar">
+  <div class="container">
+    <a href="#inicio" class="nav-logo">
+      <div class="nav-logo-icon">C</div>
+      <div class="nav-logo-text">
+        <strong>CALM</strong>
+        <span>Odontología</span>
+      </div>
+    </a>
 
+    <ul class="nav-links">
+      <li><a href="#inicio">Inicio</a></li>
+      <li><a href="#nosotros">Nosotros</a></li>
+      <li><a href="#servicios">Servicios</a></li>
+      <li><a href="#equipo">Equipo</a></li>
+      <li><a href="#testimonios">Testimonios</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+    </ul>
 
-                <!-- Botón móvil -->
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-
-                <!-- Menú -->
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav ms-auto">
-                        <li class="nav-item">
-                            <a class="nav-link" href="#inicio">Inicio</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#servicios">Servicios</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#equipo">Equipo</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#horarios">Horarios</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#contacto">Contacto</a>
-                        </li>
-                    </ul>
-
-                    <!-- Redes sociales -->
-                    <div class="social-icons d-flex ms-3">
-                        <a href="https://api.whatsapp.com/send?phone=5491133626107" target="_blank" title="WhatsApp">
-                            <i class="fab fa-whatsapp"></i>
-                        </a>
-                        <a href="https://www.instagram.com/calm.odontologia/" target="_blank" title="Instagram">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                        <a href="mailto:florencianahiana@gmail.com" title="Email">
-                            <i class="fas fa-envelope"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </nav>
-
-        <!-- HERO SECTION -->
-        <section id="inicio" class="hero-section">
-            <div class="hero-content animate-fade-in">
-                <div class="container">
-                    <div class="row align-items-center">
-                        <div class="col-lg-6">
-                            <!--
-                            <div class="badge-custom mb-4">+25 años de experiencia</div>
-                            -->
-                            <p class="hero-title">
-                                TU SONRISA ES NUESTRA <span class="gradient-text">PRIORIDAD</span></p>
-                            <p class="hero-subtitle">
-                                En CALM, con más de 25 años de experiencia, te ayudamos a recuperar tu sonrisa con un
-                                trato cálido,
-                                personalizado y profesional.
-                            </p>
-
-                            <div class="hero-buttons">
-                                <a href="https://api.whatsapp.com/send?phone=5491133626107" target="_blank"
-                                    title="WhatsApp">
-                                    <button class="btn btn-primary btn-lg ">
-                                        <div class="social-icons d-flex ms-3">
-                                            <i class="fab fa-whatsapp"></i>
-                                            Agendar Consulta
-                                        </div>
-                                    </button>
-                                </a>
-                            </div><br />
-                        </div>
-
-
-                        <div class="col-lg-6">
-                            <div class="hero-image">
-                                <div class="hero-image">
-                                    <div class="image-container">
-                                        <img src="../imagenes/calm 1.jpg?height=400&width=600"
-                                            alt="Consultorio dental profesional" class="img-fluid rounded" />
-                                        <div class="image-bg"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-        </section>
-
-        <!-- SERVICIOS SECTION -->
-        <section id="servicios" class="section-padding bg-light">
-            <div class="container">
-                <div class="section-title text-center mb-5">
-                    <h2>Nuestros Servicios</h2>
-                    <p class="text-muted">Ofrecemos una amplia gama de tratamientos dentales con la más alta calidad</p>
-                </div>
-
-                <div class="row">
-                    <div class="col-md-6 col-lg-4 mb-4">
-                        <div class="service-card">
-                            <div class="service-card">
-                                <div class="team-image">
-                                    <img src="../imagenes/general.jpeg?height=400&width=400" alt="Dra. Nanci Briner"
-                                        class="img-fluid rounded-circle" />
-                                    <div class="team-badge">
-                                        <i class="fas fa-hand-holding-medical"></i>
-                                    </div>
-                                </div>
-                                <h4>Odontología General</h4>
-                                <p>Limpieza dental, resinas, extracciones, diagnóstico y prevención.</p>
-                                <p class="service-details">Odontología Integral, diagnósticos y tratamientos.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-6 col-lg-4 mb-4">
-                        <div class="service-card">
-                            <div class="service-card">
-                                <div class="team-image">
-                                    <img src="../imagenes/braquetes 1.jpeg?height=400&width=400" alt="Dra. Nanci Briner"
-                                        class="img-fluid rounded-circle" />
-                                    <div class="team-badge">
-                                        <i class="fas fa-teeth"></i>
-                                    </div>
-                                </div>
-                                <h4>Ortodoncia</h4>
-                                <p>Brackets metálicos y estéticos, ortodoncia adultos, placas de contención.</p>
-                                <p class="service-details">Corrección de defectos e irregularidades de posición de los
-                                    dientes.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-6 col-lg-4 mb-4">
-                        <div class="service-card">
-                            <div class="service-card">
-                                <div class="team-image">
-                                    <img src="../imagenes/pediatria.jpeg?height=400&width=400" alt="Dra. Nanci Briner"
-                                        class="img-fluid rounded-circle" />
-                                    <div class="team-badge">
-                                        <i class="fas fa-heart"></i>
-                                    </div>
-                                </div>
-                                <h4>Odontopediatría</h4>
-                                <p>Aparatos removibles.</p>
-                                <p class="service-details">Atención de niños desde 3 años hasta su adolescencia.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-6 col-lg-4 mb-4">
-                        <div class="service-card">
-                            <div class="service-card">
-                                <div class="team-image">
-                                    <img src="../imagenes/protesis 1.jpeg?height=400&width=400" alt="Dra. Nanci Briner"
-                                        class="img-fluid rounded-circle" />
-                                    <div class="team-badge">
-                                        <i class="fas fa-teeth-open"></i>
-                                    </div>
-                                </div>
-                                <h4>Prótesis dentales</h4>
-                                <p>Prótesis removibles, parciales y completas, de acrílico, cromo y flexibles.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-6 col-lg-4 mb-4">
-                        <div class="service-card">
-                            <div class="service-card">
-                                <div class="team-image">
-                                    <img src="../imagenes/control.jpeg?height=400&width=400" alt="Dra. Nanci Briner"
-                                        class="img-fluid rounded-circle" />
-                                    <div class="team-badge">
-                                        <i class="fas fa-tooth"></i>
-                                    </div>
-                                </div>
-                                <h4>Endodoncia</h4>
-                                <p>Tratamientos de conducto para salvar dientes con infecciones o daños severos.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-6 col-lg-4 mb-4">
-                        <div class="service-card">
-                            <div class="service-card">
-                                <div class="team-image">
-                                    <img src="../imagenes/limpieza (2).jpeg?height=400&width=400"
-                                        alt="Dra. Nanci Briner" class="img-fluid rounded-circle" />
-                                    <div class="team-badge">
-                                        <i class="fas fa-shield-alt"></i>
-                                    </div>
-                                </div>
-                                <h4>Tratamiento Periodontal</h4>
-                                <p>Limpieza y flúor.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-        </section>
-
-
-        <!-- EQUIPO SECTION -->
-        <section id="equipo" class="section-padding">
-            <div class="container">
-                <div class="section-title text-center mb-5">
-                    <h2>Nuestro Equipo</h2>
-                    <p class="text-muted">Profesionales altamente calificados comprometidos con tu bienestar</p>
-                </div>
-
-                <div class="row justify-content-center">
-                    <div class="col-lg-3 mb-3"> 
-                        <div class="team-card text-center">
-                            <div class="team-image">
-                                <img src="../imagenes/Nanci.jpeg?height=300&width=300" alt="Dra. Nanci Briner"
-                                    class="img-fluid rounded-circle" />
-                                <div class="team-badge">
-                                    <i class="fas fa-tooth"></i>
-                                </div>
-                            </div>
-                            <h4>Dra. Nanci Briner</h4>
-                            <h4>
-                                <p class="team-specialty">Odontología General</p>
-                            </h4>
-                            <p class="team-experience">Especialista en atención personalizada</p>
-                            <p class="team-experience">+25 años de experiencia</p>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3 mb-3">
-                        <div class="team-card text-center">
-                            <div class="team-image">
-                                <img src="../imagenes/foto Giselle.jpeg?height=300&width=300" alt="Dra. Nanci Briner"
-                                    class="img-fluid rounded-circle" />
-                                <div class="team-badge">
-                                    <i class="fas fa-shield-alt"></i>
-                                </div>
-                            </div>
-                            <h4>Cirugías</h4>
-                            <h4>
-                                <p class="team-specialty">Extracciones</p>
-                            </h4>
-                            <p class="team-experience">Piezas dentarias retenidas</p>
-                            <p class="team-experience">Procedimientos especializados</p>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3 mb-3">
-                        <div class="team-card text-center">
-                            <div class="team-image">
-                                <img src="../imagenes/foto Barby.jpeg?height=300&width=300" alt="Dra. Nanci Briner"
-                                    class="img-fluid rounded-circle" />
-                                <div class="team-badge">
-                                    <i class="fas fa-hand-holding-medical"></i>
-                                </div>
-                            </div>
-                            <h4>Tratamientos Dentales</h4>
-                            <h4>
-                                <p class="team-specialty">Endodoncia</p>
-                            </h4>
-                            <p class="team-experience">Tratamiento de Conducto</p>
-                            <p class="team-experience">Procedimientos especializados</p>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3 mb-3">
-                        <div class="team-card text-center">
-                            <div class="team-image">
-                                <img src="../imagenes/foto Dario.jpeg?height=300&width=300" alt="Dra. Nanci Briner"
-                                    class="img-fluid rounded-circle" />
-                                <div class="team-badge">
-                                    <i class="fas fa-calendar"></i>
-                                </div>
-                            </div>
-                            <h4>Coordinador Ejecutivo</h4>
-                            <h4>
-                                <p class="team-specialty">Gestion Odontologica</p>
-                            </h4>
-                            <p class="team-experience">Seguimiento de casos</p>
-                            <p class="team-experience">Atencion Integral y Personalizada </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-
-
-        <!-- HORARIOS SECTION -->
-
-        <section id="horarios" class="section-padding bg-light">
-            <div class="container">
-                <div class="section-title text-center mb-5">
-                    <h2>Horarios de Atención y Ubicación</h2>
-                    <p class="text-muted">Estamos aquí para cuidar tu sonrisa</p>
-                </div>
-                <div class="row justify-content-center">
-                    <div class="col-md-4 mb-4">
-                        <div class="team-card text-center">
-                            <div class="d-flex align-items-center justify-content-center mb-3">
-                                <i class="fas fa-clock me-2"></i>
-                                <span>Horarios Flexibles</span>
-                            </div>
-                            <p class="text-muted">
-                                <li><strong>Lun - Mié - Vie:</strong>19:00 hs. a 22:30 hs.</li>
-                                <li><strong>Mar - Jue:</strong>14:00 hs. a 22:30 hs.</li>
-                            </p>
-                            <div class="d-flex align-items-center justify-content-center mb-3">
-                                <i class="fas fa-hand-holding-medical"></i>
-                                <span><strong>Se atienden urgencias</strong></span>
-                            </div>
-                            <p class="text-muted">
-                                1164151885 por whatsapp
-                            </p>
-                            <div class="d-flex align-items-center justify-content-center mb-3">
-                                <i class="fas fa-users me-2"></i>
-                                <span>Atención personalizada</span>
-                            </div>
-                            <p class="text-muted">
-                                Contactanos por WhatsApp para coordinar tu cita en el horario que mejor te convenga
-                            </p>
-                        </div>
-                    </div>
-
-
-                    <div class="col-md-4 mb-4">
-                        <div class="team-card text-center">
-                            <div class="d-flex align-items-center justify-content-center mb-3">
-                                
-                                <iframe 
-                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3289.875267001018!2d-58.77994982453237!3d-34.45531404967535!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bc98d4008ac89d%3A0x783531e04f7f979c!2sPadre%20Roqueta%201655%2C%20B1664%20Manuel%20Alberti%2C%20Provincia%20de%20Buenos%20Aires!5e0!3m2!1ses-419!2sar!4v1765743834892!5m2!1ses-419!2sar" 
-                                    width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
-                                </iframe> 
-                                
-                            </div>
-                        </div>
-                    </div>
-                </div>
-        </section>
-
-
-
-        
-        <!-- TESTIMONIOS SECTION -->
-        <section class="section-padding">
-            <div class="container">
-                <div class="section-title text-center mb-5">
-                    <h2>Lo que dicen nuestros pacientes</h2>
-                    <p class="text-muted">La satisfacción de nuestros pacientes es nuestro mayor logro</p>
-                </div>
-                
-                <div class="row">
-                    <div class="col-md-4 mb-4">
-                        <div class="testimonial-card">
-                            <div class="testimonial-stars">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </div>
-                            <p class="testimonial-text">"Excelente atención y resultados increíbles. El tratamiento fue muy cómodo y el personal siempre fue muy amable."</p>
-                            <div class="testimonial-author">
-                                <strong>Laura Pérez</strong>
-                                <small>Ortodoncia Invisible</small>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="col-md-4 mb-4">
-                        <div class="testimonial-card">
-                            <div class="testimonial-stars">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </div>
-                            <p class="testimonial-text">"Profesionalismo excepcional. La Dra. Nancy me explicó todo el proceso y el resultado superó mis expectativas."</p>
-                            <div class="testimonial-author">
-                                <strong>Miguel Torres</strong>
-                                <small>Implante Dental</small>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="col-md-4 mb-4">
-                        <div class="testimonial-card">
-                            <div class="testimonial-stars">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </div>
-                            <p class="testimonial-text">"Quedé encantada con mi sonrisa nueva. El equipo es muy profesional y las instalaciones son de primera."</p>
-                            <div class="testimonial-author">
-                                <strong>Carmen Silva</strong>
-                                <small>Blanqueamiento</small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-       <!-- CONTACTO SECTION -->
-        <section id="contacto" class="section-padding bg-light">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-6 mb-5">
-                        <h2>Agenda tu cita hoy</h2>
-                        <p class="text-muted mb-4">Estamos aquí para cuidar tu sonrisa. Contáctanos para agendar tu consulta.</p>
-                        
-                        <div class="contact-info">
-                            <div class="contact-item">
-                                <div class="contact-icon">
-                                    <i class="fas fa-phone"></i>
-                                </div>
-                                <div>
-                                    <strong>Teléfono</strong>
-                                    <p>+54 9 11 3850-7828</p>
-                                </div>
-                            </div>
-                            
-                            <div class="contact-item">
-                                <div class="contact-icon">
-                                    <i class="fas fa-envelope"></i>
-                                </div>
-                                <div>
-                                    <strong>Email</strong>
-                                    <p>info@calmodontologia.com</p>
-                                </div>
-                            </div>
-                            
-                            <div class="contact-item">
-                                <div class="contact-icon">
-                                    <i class="fas fa-map-marker-alt"></i>
-                                </div>
-                                <div>
-                                    <strong>Dirección</strong>
-                                    <p>Padre Roqueta 1677 - Manuel Alberti - Pilar, Buenos Aires</p>
-                                </div>
-                            </div>
-                            
-                            <div class="contact-item">
-                                <div class="contact-icon">
-                                    <i class="fas fa-clock"></i>
-                                </div>
-                                <div>
-                                    <strong>Horarios</strong>
-                                    <strong>Horarios</strong>
-                                    <p><strong>Lun - Mié - Vie:</strong>19:00 hs. a 22:30 hs.</p>
-                                    <p><strong>Mar - Jue:</strong>14:00 hs. a 22:30 hs.</p>
-                                    <p><strong>Se atienden urgencias</strong></p>
-                                    <p><strong>1164151885 por whatsapp</strong></p>
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="col-lg-6">
-                        <div class="contact-form-card">
-                            <h4>Solicitar Cita</h4>
-                            <p class="text-muted">Completa el formulario y nos pondremos en contacto contigo</p>
-                            
-                            <!-- Configurado formulario para envío por email con Formspree -->
-                            <form id="contactForm" action="" method="POST">
-                                <div class="row">
-                                    <div class="col-md-6 mb-3">
-                                        <label class="form-label">Nombre</label>
-                                        <input type="text" name="nombre" class="form-control" placeholder="Tu nombre" required>
-                                    </div>
-                                    <div class="col-md-6 mb-3">
-                                        <label class="form-label">Apellido</label>
-                                        <input type="text" name="apellido" class="form-control" placeholder="Tu apellido" required>
-                                    </div>
-                                </div>
-                                
-                                <div class="mb-3">
-                                    <label class="form-label">Teléfono</label>
-                                    <input type="tel" name="telefono" class="form-control" placeholder="Tu teléfono" required>
-                                </div>
-                                
-                                <div class="mb-3">
-                                    <label class="form-label">Email</label>
-                                    <input type="email" name="_replyto" class="form-control" placeholder="rdariobuyatti@yahoo.com" required>
-                                </div>
-                                
-                                <div class="mb-3">
-                                    <label class="form-label">Servicio de interés</label>
-                                    <select name="servicio" class="form-select" required>
-                                        <option value="">Selecciona un servicio</option>
-                                        <option value="consulta">Consulta General</option>
-                                        <option value="ortodoncia">Ortodoncia</option>
-                                        <option value="implantes">Implantes</option>
-                                        <option value="estetica">Estética Dental</option>
-                                        <option value="endodoncia">Endodoncia</option>
-                                        <option value="pediatria">Odontopediatría</option>
-                                    </select>
-                                </div>
-                                
-                                <div class="mb-3">
-                                    <label class="form-label">Mensaje</label>
-                                    <textarea name="mensaje" class="form-control" rows="3" placeholder="Cuéntanos sobre tu consulta..."></textarea>
-                                </div>
-                                
-                                <!-- Campos ocultos mejorados para Formspree -->
-                                <input type="hidden" name="_subject" value="Nueva solicitud de cita - Calm Odontología">
-                                <input type="hidden" name="_captcha" value="false">
-                                <input type="text" name="_gotcha" style="display:none">
-                                
-                                <button type="submit" class="btn btn-primary w-100">
-                                    <span class="btn-text">Enviar Solicitud</span>
-                                    <span class="btn-loading d-none">
-                                        <i class="fas fa-spinner fa-spin me-2"></i>Enviando...
-                                    </span>
-                                </button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- FOOTER -->
-        <footer class="footer-section text-white">
-            <div class="container">
-                <div class="row align-items-center py-4">
-                    <div class="col-md-6">
-                        <div class="d-flex align-items-center">
-                            <img style="height:10%;width: 10%; max-width: 50px; min-height: 10px; height: auto; border-radius: 50%; margin-bottom: 1%;"
-                                class="img-responsive " class="ms-5 " src="../imagenes/logo.png" alt="png" />
-                            <div>
-                                <h5 class="mb-0">CALM Odontología</h5>
-                                <h5 class="mb-0">Dra. Nanci Briner</h5>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <ul
-                            class="footer-links list-unstyled d-flex justify-content-md-end justify-content-center mb-0">
-                            <li><a href="#inicio">Inicio</a></li>
-                            <li><a href="#servicios">Servicios</a></li>
-                            <li><a href="#equipo">Equipo</a></li>
-                            <li><a href="#horarios">Horarios</a></li>
-                            <li><a href="#contacto">Contacto</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <hr class="my-3">
-                <div class="text-center">
-                    <p class="mb-0">&copy; 2025 CALM Odontología. Todos los derechos reservados.</p>
-                </div>
-            </div>
-        </footer>
-
+    <div class="nav-right">
+      <a href="tel:+541123862846" class="nav-phone">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        <span>11 2386-2846</span>
+      </a>
+      <a href="https://wa.me/541123862846?text=Hola%2C%20quiero%20pactar%20un%20turno" target="_blank" rel="noopener noreferrer" class="btn-cta">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Pactar Turno
+      </a>
     </div>
 
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <button class="nav-toggle" aria-label="Abrir menú">
+      <svg id="nav-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="12" x2="20" y2="12"></line><line x1="4" y1="6" x2="20" y2="6"></line><line x1="4" y1="18" x2="20" y2="18"></line></svg>
+    </button>
+  </div>
 
-    <!-- JavaScript personalizado -->
-    <script src="script.js"></script>
+  <div class="mobile-menu">
+    <a href="#inicio">Inicio</a>
+    <a href="#nosotros">Nosotros</a>
+    <a href="#servicios">Servicios</a>
+    <a href="#equipo">Equipo</a>
+    <a href="#testimonios">Testimonios</a>
+    <a href="#contacto">Contacto</a>
+    <div class="mobile-menu-cta">
+      <a href="https://wa.me/541123862846?text=Hola%2C%20quiero%20pactar%20un%20turno" target="_blank" rel="noopener noreferrer" class="btn-cta">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Pactar Turno
+      </a>
+    </div>
+  </div>
+</nav>
 
+<!-- ============================================
+     HERO SECTION
+     ============================================ -->
+<section class="hero" id="inicio">
+  <div class="hero-bg">
+    <img src="https://private-us-east-1.manuscdn.com/sessionFile/NNGU6y4JmSdL8VLoULBHDB/sandbox/IqFqInWD92Orfe042AeSFd-img-1_1771123670000_na1fn_aGVyby1jYWxt.jpg?x-oss-process=image/resize,w_1920,h_1920/format,webp/quality,q_80&Expires=1798761600&Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9wcml2YXRlLXVzLWVhc3QtMS5tYW51c2Nkbi5jb20vc2Vzc2lvbkZpbGUvTk5HVTZ5NEptU2RMOFZMb1VMQkhEQi9zYW5kYm94L0lxRnFJbldEOTJPcmZlMDQyQWVTRmQtaW1nLTFfMTc3MTEyMzY3MDAwMF9uYTFmbl9hR1Z5YnkxallXeHQuanBnP3gtb3NzLXByb2Nlc3M9aW1hZ2UvcmVzaXplLHdfMTkyMCxoXzE5MjAvZm9ybWF0LHdlYnAvcXVhbGl0eSxxXzgwIiwiQ29uZGl0aW9uIjp7IkRhdGVMZXNzVGhhbiI6eyJBV1M6RXBvY2hUaW1lIjoxNzk4NzYxNjAwfX19XX0_&Key-Pair-Id=K2HSFNDJXOU9YS&Signature=AJoux9jXyjybp4fy1vS6jLlnTbT6RyifFLivDHpUTgdZIt2YcBtqpBfn24504VoFkj8i6suxcVnE5D2yePjYAecsodCEyIEKxXRrpp5DVCId5t75FcyQR5Elb0G6gvOKDXYZbv4rD3Kn2ns7RlVsg3zwYB0Cos2W0kgbW3BfxqpGeAfim1WWN5UREWZCwgIqJejpBqMcsZrcV1qodugfKykFaPs7q9-AjJwjoI03YZ1WNfXh0LtkU7nsl-htnKs6j0fbIPNwEbV-f0507F1ZREFtIouIvBfsKr1CqajOwwFkTngdnFjFiLV8grqLtfF88rNxS~73qE1LkZPz~qBfzw__" alt="CALM Odontología consultorio" />
+    <div class="hero-overlay"></div>
+  </div>
+
+  <div class="container hero-content">
+    <div class="hero-badge">
+      <div class="hero-badge-dot"></div>
+      <span>+20 años de experiencia</span>
+    </div>
+
+    <h1>Odontología <span class="accent">con Conciencia</span></h1>
+
+    <p class="hero-desc">En CALM cuidamos tu sonrisa con calidez humana, profesionalismo y transparencia. Porque tu salud bucal merece un trato diferente.</p>
+
+    <div class="hero-buttons">
+      <a href="https://wa.me/541123862846?text=Hola%2C%20quiero%20pactar%20un%20turno" target="_blank" rel="noopener noreferrer" class="btn-hero-primary">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Pactar Turno
+      </a>
+      <a href="tel:+541123862846" class="btn-hero-secondary">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        Llamar Ahora
+      </a>
+    </div>
+
+    <div class="hero-trust">
+      <div class="hero-trust-item">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        <span>Urgencias 24/7</span>
+      </div>
+      <div class="hero-trust-item">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg>
+        <span>Laboratorio Propio</span>
+      </div>
+      <div class="hero-trust-item">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        <span>Equipo Especializado</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-scroll">
+    <span>Descubrí más</span>
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+  </div>
+</section>
+
+<!-- ============================================
+     ABOUT SECTION
+     ============================================ -->
+<section class="about" id="nosotros">
+  <div class="container">
+    <div class="about-grid animate-on-scroll">
+      <div class="about-image-wrap">
+        <img src="https://private-us-east-1.manuscdn.com/sessionFile/NNGU6y4JmSdL8VLoULBHDB/sandbox/IqFqInWD92Orfe042AeSFd-img-2_1771123667000_na1fn_YWJvdXQtY2FsbQ.jpg?x-oss-process=image/resize,w_1920,h_1920/format,webp/quality,q_80&Expires=1798761600&Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9wcml2YXRlLXVzLWVhc3QtMS5tYW51c2Nkbi5jb20vc2Vzc2lvbkZpbGUvTk5HVTZ5NEptU2RMOFZMb1VMQkhEQi9zYW5kYm94L0lxRnFJbldEOTJPcmZlMDQyQWVTRmQtaW1nLTJfMTc3MTEyMzY2NzAwMF9uYTFmbl9ZV0p2ZFhRdFkyRnNiUS5qcGc~eC1vc3MtcHJvY2Vzcz1pbWFnZS9yZXNpemUsd18xOTIwLGhfMTkyMC9mb3JtYXQsd2VicC9xdWFsaXR5LHFfODAiLCJDb25kaXRpb24iOnsiRGF0ZUxlc3NUaGFuIjp7IkFXUzpFcG9jaFRpbWUiOjE3OTg3NjE2MDB9fX1dfQ__&Key-Pair-Id=K2HSFNDJXOU9YS&Signature=hG-LqLJA2crxMVYj-ULCchGFg2jbO1dsdRHxgawi1FL-Mr0Z46jX~y-kP8ArsKnYd9eNpAKpXqc6RSQM2MI8-yj7si3WnERqVzDauPVUKvZ2KjGfdXPBABmCJvs3jXE3AkfTKTyHl6Cgi9Hr7qE8y5BbmPgUmS7b98PNCU2aLCkuPzpPUqm4untkrKOfbyVXQJtTAZ6aQN0afbUCv6fz~x0dZvljeusHb6~e-mHo1s-Bu6HvRxqDrhS1nDreqg1QniiFu4lL3RWoP9StsVeiHLjL0rNLhkY1hNeQgy~2fz2do-rX6ffXUObG5wltGOfqp6A9C4aeD37UwUt3FGbzcg__" alt="Sonrisa saludable" />
+        <div class="about-float-card">
+          <div class="about-float-card-top">
+            <div class="about-float-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+            </div>
+            <strong>99%</strong>
+          </div>
+          <p>de satisfacción en nuestros pacientes</p>
+        </div>
+      </div>
+
+      <div class="about-content">
+        <span class="section-label">Quiénes Somos</span>
+        <h2>Más que una clínica, <span class="accent">un espacio de confianza</span></h2>
+        <p>En CALM entendemos que detrás de cada sonrisa hay una persona que busca bienestar y confianza. Nos alejamos del trato convencional para ofrecerte un espacio donde la <strong>calidez humana</strong> de nuestros profesionales es el pilar de cada tratamiento.</p>
+        <p>Creemos que la salud bucal debe cuidarse en un entorno de paz, respeto y transparencia. Si sentís que te dieron una respuesta sobre tu salud bucal que no te convence, estamos acá para ayudarte a buscar otras soluciones.</p>
+
+        <div class="about-features">
+          <div class="about-feature">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg>
+            <span>Tratamientos Modernos</span>
+          </div>
+          <div class="about-feature">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            <span>Profesionales Calificados</span>
+          </div>
+          <div class="about-feature">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+            <span>Precios Accesibles</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     SERVICES SECTION
+     ============================================ -->
+<section class="services" id="servicios">
+  <div class="container">
+    <div class="section-header animate-on-scroll">
+      <span class="section-label">Nuestros Servicios</span>
+      <h2>Todo lo que necesitás para <span class="accent">recuperar tu sonrisa</span></h2>
+      <p>Contamos con un equipo multidisciplinario y tecnología de vanguardia para brindarte la mejor atención.</p>
+    </div>
+
+    <div class="services-grid stagger-children">
+      <!-- Ortodoncia -->
+      <div class="service-card stagger-item animate-on-scroll">
+        <div class="service-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15.5 3.5a2 2 0 0 1 0 4 2 2 0 0 1 0-4zM8.5 3.5a2 2 0 0 1 0 4 2 2 0 0 1 0-4z"/><path d="M15.5 7.5C17 10 19 12 19 15c0 3-2 5-4 5s-2-1-3-1-1 1-3 1-4-2-4-5c0-3 2-5 3.5-7.5"/></svg>
+        </div>
+        <h3>Ortodoncia</h3>
+        <p>Corregimos la posición de tus dientes con tratamientos personalizados. Brackets metálicos, estéticos y alineadores para lograr la sonrisa que siempre quisiste.</p>
+      </div>
+      <!-- Prótesis Dentales -->
+      <div class="service-card stagger-item animate-on-scroll">
+        <div class="service-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m2 4 3 12h14l3-12-6 7-4-7-4 7-6-7zm3 16h14"/></svg>
+        </div>
+        <h3>Prótesis Dentales</h3>
+        <p>Recuperá tu dentadura completa con prótesis que se ven naturales y se sienten cómodas. Contamos con laboratorio propio: tu prótesis lista en una semana.</p>
+      </div>
+      <!-- Endodoncia -->
+      <div class="service-card stagger-item animate-on-scroll">
+        <div class="service-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+        </div>
+        <h3>Endodoncia</h3>
+        <p>Tratamiento de conducto con precisión técnica impecable. Conservamos tu pieza dental natural eliminando el dolor de raíz, en un ambiente de total tranquilidad.</p>
+      </div>
+      <!-- Coronas Dentales -->
+      <div class="service-card stagger-item animate-on-scroll">
+        <div class="service-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></svg>
+        </div>
+        <h3>Coronas Dentales</h3>
+        <p>Devolvemos la fuerza y belleza a tus dientes dañados con coronas de alta calidad que se integran perfectamente con el resto de tu sonrisa.</p>
+      </div>
+      <!-- Caries y Arreglos -->
+      <div class="service-card stagger-item animate-on-scroll">
+        <div class="service-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"/></svg>
+        </div>
+        <h3>Caries y Arreglos</h3>
+        <p>Tratamos cada caries con suavidad excepcional y atención dedicada, asegurando que recuperes la salud de tu boca en un ambiente de total serenidad.</p>
+      </div>
+      <!-- Limpieza Dental -->
+      <div class="service-card stagger-item animate-on-scroll">
+        <div class="service-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 16.3c2.2 0 4-1.83 4-4.05 0-1.16-.57-2.26-1.71-3.19S7.29 6.75 7 5.3c-.29 1.45-1.14 2.84-2.29 3.76S3 11.1 3 12.25c0 2.22 1.8 4.05 4 4.05z"/><path d="M12.56 6.6A10.97 10.97 0 0 0 14 3.02c.5 2.5 2 4.9 4 6.5s3 3.5 3 5.5a6.98 6.98 0 0 1-11.91 4.97"/></svg>
+        </div>
+        <h3>Limpieza Dental</h3>
+        <p>Sesiones de limpieza y blanqueamiento diseñadas como un momento de cuidado personal, donde la suavidad y el detalle técnico resaltan tu mejor versión.</p>
+      </div>
+      <!-- Terceros Molares -->
+      <div class="service-card stagger-item animate-on-scroll">
+        <div class="service-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"/></svg>
+        </div>
+        <h3>Terceros Molares</h3>
+        <p>Extracción de muelas de juicio con planificación precisa y mano experta. Un proceso fluido, rápido y cómodo, sin estrés.</p>
+      </div>
+      <!-- Postes de Fibra de Vidrio -->
+      <div class="service-card stagger-item animate-on-scroll">
+        <div class="service-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83Z"/><path d="m22 17.65-9.17 4.16a2 2 0 0 1-1.66 0L2 17.65"/><path d="m22 12.65-9.17 4.16a2 2 0 0 1-1.66 0L2 12.65"/></svg>
+        </div>
+        <h3>Postes de Fibra de Vidrio</h3>
+        <p>Rehabilitación avanzada para dientes con tratamiento de conducto. Los postes de fibra de vidrio son uno de los avances más importantes en odontología restauradora.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     LAB SECTION
+     ============================================ -->
+<section class="lab">
+  <div class="container">
+    <div class="lab-grid animate-on-scroll">
+      <div class="lab-content">
+        <span class="section-label coral">Laboratorio Propio</span>
+        <h2>Tu prótesis lista <span class="accent" style="color:var(--coral)">en una semana</span></h2>
+        <p>Nos destaca tener nuestro propio laboratorio dental, donde fabricamos prótesis, coronas y piezas restauradoras con la más alta calidad. Mientras otros te dicen que tu prótesis demora un mes, en CALM la tenemos lista en una semana.</p>
+        <div class="lab-list">
+          <div class="lab-list-item">
+            <div class="lab-check"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></div>
+            <span>Fabricación propia con control de calidad total</span>
+          </div>
+          <div class="lab-list-item">
+            <div class="lab-check"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></div>
+            <span>Tiempos de entrega hasta 4 veces más rápidos</span>
+          </div>
+          <div class="lab-list-item">
+            <div class="lab-check"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></div>
+            <span>Materiales de primera calidad importados</span>
+          </div>
+          <div class="lab-list-item">
+            <div class="lab-check"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></div>
+            <span>Ajustes y correcciones sin costo adicional</span>
+          </div>
+        </div>
+        <a href="https://wa.me/541123862846?text=Hola%2C%20quiero%20consultar%20por%20pr%C3%B3tesis" target="_blank" rel="noopener noreferrer" class="btn-coral">Quiero Mi Prótesis Ya</a>
+      </div>
+      <div class="lab-image">
+        <img src="https://private-us-east-1.manuscdn.com/sessionFile/NNGU6y4JmSdL8VLoULBHDB/sandbox/IqFqInWD92Orfe042AeSFd-img-3_1771123663000_na1fn_c2VydmljZXMtYmc.jpg?x-oss-process=image/resize,w_1920,h_1920/format,webp/quality,q_80&Expires=1798761600&Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9wcml2YXRlLXVzLWVhc3QtMS5tYW51c2Nkbi5jb20vc2Vzc2lvbkZpbGUvTk5HVTZ5NEptU2RMOFZMb1VMQkhEQi9zYW5kYm94L0lxRnFJbldEOTJPcmZlMDQyQWVTRmQtaW1nLTNfMTc3MTEyMzY2MzAwMF9uYTFmbl9jMlZ5ZG1salpYTXRZbWMuanBnP3gtb3NzLXByb2Nlc3M9aW1hZ2UvcmVzaXplLHdfMTkyMCxoXzE5MjAvZm9ybWF0LHdlYnAvcXVhbGl0eSxxXzgwIiwiQ29uZGl0aW9uIjp7IkRhdGVMZXNzVGhhbiI6eyJBV1M6RXBvY2hUaW1lIjoxNzk4NzYxNjAwfX19XX0_&Key-Pair-Id=K2HSFNDJXOU9YS&Signature=dLPZsOB8nzDWMuk4Wg5C8h-KaD2biXMVh1v8fpgGrLRGtLxJpVu8hYBMxfG~sB3lO48RYATtTzPSsv-T4UyUtmwzMuG4frFVI81ERuKL-RP4zyG2NL629LT06bkyqhHXUxX09argG6NSdXmoCccTpw4fB2iBLjiyL~yg7Jepmj4USNOiPwUSbwm9xTgiXJery2y2kuskjigxlNjKdtGIVefVelWegtGD~6LGVZxxTPLe62u9Cwyb17sroutt1WJXkM8fLVyuUV74eGCuGN0ZHKko9xn3FVp5qEtJd14h4orx8QzLTE~HL~40NsF7QX0Gpv32-sHctFE7FPmkfssUGA__" alt="Laboratorio dental CALM" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     STATS SECTION
+     ============================================ -->
+<section class="stats">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat-item animate-on-scroll">
+        <div class="stat-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg>
+        </div>
+        <div class="stat-value counter" data-end="20" data-prefix="+" data-duration="2000">+0</div>
+        <div class="stat-label">Años de Experiencia</div>
+      </div>
+      <div class="stat-item animate-on-scroll">
+        <div class="stat-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+        </div>
+        <div class="stat-value counter" data-end="99" data-suffix="%" data-duration="2000">0%</div>
+        <div class="stat-label">Satisfacción de Pacientes</div>
+      </div>
+      <div class="stat-item animate-on-scroll">
+        <div class="stat-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <div class="stat-value counter" data-end="5000" data-prefix="+" data-duration="2500">+0</div>
+        <div class="stat-label">Pacientes Atendidos</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     TEAM SECTION
+     ============================================ -->
+<section class="team" id="equipo">
+  <div class="container">
+    <div class="section-header animate-on-scroll">
+      <span class="section-label">Nuestro Equipo</span>
+      <h2>Profesionales que <span class="accent">te cuidan de verdad</span></h2>
+      <p>Un equipo comprometido con tu bienestar, donde la calidez humana es tan importante como la excelencia técnica.</p>
+    </div>
+
+    <div class="team-banner animate-on-scroll">
+      <img src="https://private-us-east-1.manuscdn.com/sessionFile/NNGU6y4JmSdL8VLoULBHDB/sandbox/IqFqInWD92Orfe042AeSFd-img-4_1771123665000_na1fn_dGVhbS1iZw.jpg?x-oss-process=image/resize,w_1920,h_1920/format,webp/quality,q_80&Expires=1798761600&Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9wcml2YXRlLXVzLWVhc3QtMS5tYW51c2Nkbi5jb20vc2Vzc2lvbkZpbGUvTk5HVTZ5NEptU2RMOFZMb1VMQkhEQi9zYW5kYm94L0lxRnFJbldEOTJPcmZlMDQyQWVTRmQtaW1nLTRfMTc3MTEyMzY2NTAwMF9uYTFmbl9kR1ZoYlMxaVp3LmpwZz94LW9zcy1wcm9jZXNzPWltYWdlL3Jlc2l6ZSx3XzE5MjAsaF8xOTIwL2Zvcm1hdCx3ZWJwL3F1YWxpdHkscV84MCIsIkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiQVdTOkVwb2NoVGltZSI6MTc5ODc2MTYwMH19fV19&Key-Pair-Id=K2HSFNDJXOU9YS&Signature=bLtZojLdXpGpsU7pi1dDxzO6vtOVniSjpNDh9IhlUJW510K6fZeV5gr0mAQ7pN31~ZeqzoNwSMTrGiazj9UrbwLrIepaGg9bmsNvmhA-1OCjWgQyAZkd5G~avqv~ZBKj4W-jX1eoE~iHxRO72JoltcrOhwOKuwEv8PW2Y10BtFEdQsdIxUD1XOuRyk-JyTiskcaVhXGBgVl3EQjaI~Zg5AjbsckpN4CBEkZlwH0oE6TeAO77Y4FSTpPvzRRp8MybiPMYu1Vq1cP5YIELfN6hktPH~YbnwWlTvBDHZuLi0joOJZ9mbSI0E9ldk1esH8sLBLicLaAZb~tLk42hv6QvUQ__" alt="Equipo CALM Odontología" />
+    </div>
+
+    <div class="team-grid stagger-children">
+      <div class="team-card stagger-item animate-on-scroll">
+        <div class="team-avatar"><img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=400&h=400&fit=crop&crop=face" alt="Dra. Nanci Briner" /></div>
+        <h3>Dra. Nanci Briner</h3>
+        <p class="role">Fundadora y Odontóloga General</p>
+        <p class="desc">Con más de 25 años de trayectoria, la Dra. Nanci es el corazón de CALM. Su experiencia se traduce en precisión técnica y un profundo entendimiento de las necesidades de cada paciente.</p>
+      </div>
+      <div class="team-card stagger-item animate-on-scroll">
+        <div class="team-avatar"><img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=400&h=400&fit=crop&crop=face" alt="Dra. Giselle" /></div>
+        <h3>Dra. Giselle</h3>
+        <p class="role">Cirugía y Terceros Molares</p>
+        <p class="desc">Especialista en procedimientos quirúrgicos complejos. Su enfoque combina destreza técnica impecable con la serenidad necesaria para que cada paciente se sienta en las mejores manos.</p>
+      </div>
+      <div class="team-card stagger-item animate-on-scroll">
+        <div class="team-avatar"><img src="https://images.unsplash.com/photo-1614608682850-e0d6ed316d47?w=400&h=400&fit=crop&crop=face" alt="Dra. Bárbara Choquevilca" /></div>
+        <h3>Dra. Bárbara Choquevilca</h3>
+        <p class="role">Endodoncia</p>
+        <p class="desc">Especialista en tratamientos de conducto y preservación dental avanzada. Su precisión microscópica asegura la máxima eficacia para salvar cada pieza dental original.</p>
+      </div>
+      <div class="team-card stagger-item animate-on-scroll">
+        <div class="team-avatar"><img src="https://images.unsplash.com/photo-1537368910025-700350fe46c7?w=400&h=400&fit=crop&crop=face" alt="Dario Buyatti" /></div>
+        <h3>Dario Buyatti</h3>
+        <p class="role">Coordinador General</p>
+        <p class="desc">Responsable de que cada engranaje de la clínica funcione en perfecta armonía. Garantiza la excelencia operativa y preserva los estándares de calidad en cada atención.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     TESTIMONIALS SECTION
+     ============================================ -->
+<section class="testimonials" id="testimonios">
+  <div class="container">
+    <div class="section-header animate-on-scroll">
+      <span class="section-label">Testimonios</span>
+      <h2>La voz de <span class="accent">nuestros pacientes</span></h2>
+    </div>
+
+    <div class="testimonial-card animate-on-scroll">
+      <div class="testimonial-quote">"</div>
+      <div class="testimonial-stars">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+      </div>
+      <p class="testimonial-text" id="testimonial-text">"Excelente atención!! Fui sábado casi noche y resolvieron mi urgencia con mucho profesionalismo."</p>
+      <div class="testimonial-footer">
+        <div class="testimonial-author">
+          <strong id="testimonial-author">Miriam Biot</strong>
+          <span id="testimonial-service">Urgencia Odontológica</span>
+        </div>
+        <div class="testimonial-nav">
+          <button id="testimonial-prev" aria-label="Testimonio anterior">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+          </button>
+          <button id="testimonial-next" aria-label="Siguiente testimonio">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="testimonial-dots">
+      <button class="testimonial-dot active" aria-label="Testimonio 1"></button>
+      <button class="testimonial-dot" aria-label="Testimonio 2"></button>
+      <button class="testimonial-dot" aria-label="Testimonio 3"></button>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     CTA SECTION
+     ============================================ -->
+<section class="cta-section">
+  <div class="cta-bg">
+    <img src="https://private-us-east-1.manuscdn.com/sessionFile/NNGU6y4JmSdL8VLoULBHDB/sandbox/IqFqInWD92Orfe042AeSFd-img-5_1771123674000_na1fn_Y3RhLXNlY3Rpb24.jpg?x-oss-process=image/resize,w_1920,h_1920/format,webp/quality,q_80&Expires=1798761600&Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9wcml2YXRlLXVzLWVhc3QtMS5tYW51c2Nkbi5jb20vc2Vzc2lvbkZpbGUvTk5HVTZ5NEptU2RMOFZMb1VMQkhEQi9zYW5kYm94L0lxRnFJbldEOTJPcmZlMDQyQWVTRmQtaW1nLTVfMTc3MTEyMzY3NDAwMF9uYTFmbl9ZM1JoTFhObFkzUnBiMjQuanBnP3gtb3NzLXByb2Nlc3M9aW1hZ2UvcmVzaXplLHdfMTkyMCxoXzE5MjAvZm9ybWF0LHdlYnAvcXVhbGl0eSxxXzgwIiwiQ29uZGl0aW9uIjp7IkRhdGVMZXNzVGhhbiI6eyJBV1M6RXBvY2hUaW1lIjoxNzk4NzYxNjAwfX19XX0_&Key-Pair-Id=K2HSFNDJXOU9YS&Signature=nhX-sG6N5wa2146kExFikngBuBuRltBl5VVpkxvOYxRz5N8Md1FgUQMzrGFG5G3J1kOL-SlQrt1Wr068eZua6szf5h9l-GWMEjcGZvFP-XhcdPZ-ZmOyKmawt9pdXCqtLaM2wE96YWC9-8BOijUhL3HgvRnXlyxNQzl6rXH64fZGFlzKo~Rxi2vBMhSp7q-XKIqHSMI~CECKER4z5La-szSPGbWpB1h5PvT~lsNP9PNikC1g8eSuHbjcCYwOtyqZ2BwQCsNWOFQKmX81TdcaPI5meCO-V0Rojp54mTsqKwBZTqXErBq~fYLjdm2iBKDudZUF~-z-abvzoZ9JXVGI8w__" alt="" />
+    <div class="cta-bg-overlay"></div>
+  </div>
+  <div class="container cta-content animate-on-scroll">
+    <h2>Estás a un solo mensaje de <span class="accent">recuperar tu sonrisa</span></h2>
+    <p>No dejes para mañana lo que tu salud bucal necesita hoy. En CALM te esperamos con los brazos abiertos y la mejor atención.</p>
+    <div class="cta-buttons">
+      <a href="https://wa.me/541123862846?text=Hola%2C%20quiero%20pactar%20un%20turno" target="_blank" rel="noopener noreferrer" class="btn-hero-primary">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Pactar Turno por WhatsApp
+      </a>
+      <a href="tel:+541123862846" class="btn-cta-secondary">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        (+54) 11 2386-2846
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     FAQ SECTION
+     ============================================ -->
+<section class="faq">
+  <div class="container">
+    <div class="section-header animate-on-scroll">
+      <span class="section-label">Preguntas Frecuentes</span>
+      <h2>¿Tenés alguna <span class="accent">duda?</span></h2>
+    </div>
+
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-question">
+          ¿Atienden urgencias?
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-answer"><p>Sí, atendemos urgencias odontológicas las 24 horas, los 7 días de la semana. Contactanos por WhatsApp o teléfono y te asistimos de inmediato.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">
+          ¿Cuánto demora una prótesis dental?
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-answer"><p>Gracias a nuestro laboratorio dental propio, podemos tener tu prótesis lista en aproximadamente una semana, mucho más rápido que el promedio del mercado.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">
+          ¿Trabajan con obras sociales?
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-answer"><p>Trabajamos de forma particular con precios accesibles y competitivos. Consultanos por las opciones de financiación disponibles.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">
+          ¿Cómo puedo sacar un turno?
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-answer"><p>Podés pactar tu turno fácilmente por WhatsApp haciendo clic en el botón 'Pactar Turno' o llamándonos al (+54) 11 2386-2846.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">
+          ¿Qué medidas de higiene y seguridad tienen?
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-answer"><p>Cumplimos con todos los protocolos de bioseguridad vigentes. Esterilización completa del instrumental, uso de material descartable y desinfección permanente de todas las áreas.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     FOOTER
+     ============================================ -->
+<footer class="footer" id="contacto">
+  <div class="footer-main">
+    <div class="container">
+      <div class="footer-grid">
+        <!-- Brand -->
+        <div class="footer-brand">
+          <div class="nav-logo">
+            <div class="nav-logo-icon">C</div>
+            <div class="nav-logo-text">
+              <strong style="color:#fff">CALM</strong>
+              <span>Odontología</span>
+            </div>
+          </div>
+          <p>Odontología con Conciencia. Más de 20 años cuidando sonrisas con calidez humana, profesionalismo y transparencia.</p>
+          <div class="footer-socials">
+            <a href="https://www.instagram.com/calm.odontologia/" target="_blank" rel="noopener noreferrer" class="footer-social" aria-label="Instagram">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+            </a>
+            <a href="https://wa.me/541123862846?text=Hola%2C%20quiero%20pactar%20un%20turno" target="_blank" rel="noopener noreferrer" class="footer-social whatsapp" aria-label="WhatsApp">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Contact -->
+        <div class="footer-col">
+          <h4>Contacto</h4>
+          <a href="tel:+541123862846" class="footer-contact-item">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            <span>(+54) 11 2386-2846</span>
+          </a>
+          <div class="footer-contact-item">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span>Padre Roqueta 1677, Manuel Alberti, Pilar, Buenos Aires</span>
+          </div>
+        </div>
+
+        <!-- Hours -->
+        <div class="footer-col">
+          <h4>Horarios</h4>
+          <div class="footer-schedule">
+            <div class="footer-schedule-item">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              <div>
+                <p class="days">Lunes, Miércoles y Viernes</p>
+                <p class="hours">19:00 a 22:30 hs</p>
+              </div>
+            </div>
+            <div class="footer-schedule-item">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              <div>
+                <p class="days">Martes y Jueves</p>
+                <p class="hours">14:00 a 22:30 hs</p>
+              </div>
+            </div>
+            <div class="footer-urgency">
+              <div class="footer-urgency-dot"></div>
+              <span>Urgencias 24/7</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Map -->
+        <div class="footer-col">
+          <h4>Ubicación</h4>
+          <div class="footer-map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3289.5!2d-58.7985!3d-34.4565!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzTCsDI3JzIzLjQiUyA1OMKwNDcnNTQuNiJX!5e0!3m2!1ses!2sar!4v1700000000000!5m2!1ses!2sar" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Ubicación CALM Odontología"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <div class="container">
+      <p>&copy; 2026 CALM Odontología. Todos los derechos reservados.</p>
+      <p>Padre Roqueta 1677, Manuel Alberti, Pilar, Buenos Aires</p>
+    </div>
+  </div>
+</footer>
+
+<!-- ============================================
+     WHATSAPP FLOATING BUTTON
+     ============================================ -->
+<a href="https://wa.me/541123862846?text=Hola%2C%20quiero%20pactar%20un%20turno" target="_blank" rel="noopener noreferrer" class="whatsapp-float" aria-label="Contactar por WhatsApp">
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<script src="script.js"></script>
 </body>
-
 </html>
