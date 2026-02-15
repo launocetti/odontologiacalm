@@ -416,47 +416,11 @@ button {
 .hero-scroll span { font-size: 0.75rem; color: rgba(255,255,255,0.4); }
 .hero-scroll svg { width: 20px; height: 20px; color: rgba(255,255,255,0.4); }
 
-/*
-@media (min-width: 640px) {
+
+@media (min-width: 640px)  and (max-width: 768px) {
   .hero-buttons { flex-direction: row; }
   .hero-content { padding: 8rem 0 6rem; }
 }
-*/
-
-@media (min-width: 640px) and (max-width: 768px) {
-
-  .hero {
-    min-height: 100svh; /* mejor que vh en mobile */
-    text-align: center;
-  }
-
-  .hero h1 {
-    font-size: 2rem;
-    line-height: 1.2;
-  }
-
-  .hero-desc {
-    font-size: 1rem;
-    margin: 1rem 0;
-  }
-
-  .hero-trust {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 0.75rem;
-    margin-top: 1.5rem;
-  }
-
-  .hero-trust-item {
-    justify-content: center;
-  }
-
-  .hero-scroll {
-    display: none; /* en mobile suele molestar */
-  }
-}
-
-
 
 /* ============================================
    ABOUT SECTION
