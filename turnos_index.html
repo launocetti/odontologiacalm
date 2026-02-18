@@ -1,300 +1,409 @@
+<?php
+// Database connection
+$host = "localhost";
+$user = "root";
+$password = "";
+$database = "turnero";
+$conn = new mysqli($host, $user, $password, $database);
+if ($conn->connect_error) {
+    die("Conexión fallida: " . $conn->connect_error);
+}
+// Create tables if not exist
+$sql = "CREATE TABLE IF NOT EXISTS servicios (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(100) NOT NULL,
+    duracion INT NOT NULL,
+    precio DECIMAL(10,2) NOT NULL
+)";
+$sql .= "CREATE TABLE IF NOT EXISTS turnos (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    cliente_nombre VARCHAR(100) NOT NULL,
+    cliente_telefono VARCHAR(20),
+    cliente_email VARCHAR(100),
+    servicio_id INT,
+    fecha DATE NOT NULL,
+    hora TIME NOT NULL,
+    estado ENUM('confirmado', 'cancelado', 'completado') DEFAULT 'confirmado',
+    FOREIGN KEY (servicio_id) REFERENCES servicios(id)
+);";
+$conn->multi_query($sql);
+// Insert sample services if empty
+$result = $conn->query("SELECT COUNT(*) as total FROM servicios");
+$row = $result->fetch_assoc();
+if ($row['total'] == 0) {
+    $conn->query("INSERT INTO servicios (nombre, duracion, precio) VALUES 
+        ('Consulta general', 30, 50.00),
+        ('Servicio técnico', 60, 100.00),
+        ('Asesoría', 45, 75.00)");
+}
+$conn->close();
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Consultorio Médico - Reserva de Turno</title>
+    <title>Turnero Online</title>
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; padding: 20px; }
-        .container { max-width: 700px; margin: 0 auto; }
-        .header { text-align: center; margin-bottom: 30px; }
-        .header h1 { color: white; font-size: 2.5em; text-shadow: 2px 2px 4px rgba(0,0,0,0.3); }
-        .header p { color: rgba(255,255,255,0.9); font-size: 1.1em; margin-top: 10px; }
-        .card { background: white; border-radius: 15px; padding: 30px; box-shadow: 0 10px 30px rgba(0,0,0,0.2); margin-bottom: 20px; }
-        h2 { color: #333; margin-bottom: 20px; border-bottom: 2px solid #667eea; padding-bottom: 10px; font-size: 1.5em; }
-        .form-group { margin-bottom: 20px; }
-        label { display: block; margin-bottom: 8px; color: #555; font-weight: 600; }
-        input, select, textarea { width: 100%; padding: 12px 15px; border: 2px solid #ddd; border-radius: 8px; font-size: 16px; transition: border-color 0.3s; }
-        input:focus, select:focus, textarea:focus { outline: none; border-color: #667eea; }
-        .btn { width: 100%; padding: 15px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border: none; border-radius: 8px; font-size: 18px; font-weight: 600; cursor: pointer; transition: transform 0.2s, box-shadow 0.2s; }
-        .btn:hover { transform: translateY(-2px); box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4); }
-        .btn-secondary { background: #6c757d; }
-        .servicio-item { padding: 15px; border: 2px solid #e0e0e0; border-radius: 10px; margin-bottom: 12px; cursor: pointer; transition: all 0.3s; display: flex; justify-content: space-between; align-items: center; }
-        .servicio-item:hover { border-color: #667eea; background: #f8f9ff; }
-        .servicio-item.selected { border-color: #667eea; background: #e8eaff; }
-        .servicio-info h3 { color: #333; margin-bottom: 5px; }
-        .servicio-info span { color: #777; font-size: 14px; }
-        .servicio-color { width: 20px; height: 20px; border-radius: 50%; margin-left: 15px; }
-        .calendar-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 5px; margin-bottom: 20px; }
-        .calendar-header { text-align: center; padding: 10px; font-weight: bold; color: #667eea; }
-        .calendar-day { padding: 10px; text-align: center; border-radius: 8px; cursor: pointer; transition: all 0.2s; font-size: 14px; }
-        .calendar-day:hover:not(.disabled):not(.empty) { background: #667eea; color: white; }
-        .calendar-day.selected { background: #667eea; color: white; }
-        .calendar-day.disabled { color: #ccc; cursor: not-allowed; }
-        .calendar-day.empty { visibility: hidden; }
-        .horario-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
-        .horario-btn { padding: 12px; border: 2px solid #e0e0e0; border-radius: 8px; background: white; cursor: pointer; transition: all 0.3s; font-size: 14px; font-weight: 500; }
-        .horario-btn:hover:not(:disabled) { border-color: #667eea; background: #f8f9ff; }
-        .horario-btn.selected { background: #667eea; color: white; border-color: #667eea; }
-        .horario-btn:disabled { opacity: 0.4; cursor: not-allowed; }
-        .mensaje { padding: 15px; border-radius: 10px; margin-bottom: 20px; text-align: center; }
-        .mensaje-exito { background: #d4edda; color: #155724; border: 1px solid #c3e6cb; }
-        .mensaje-error { background: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; }
-        .steps { display: flex; justify-content: center; margin-bottom: 30px; }
-        .step { display: flex; align-items: center; color: #aaa; }
-        .step.active { color: #667eea; }
-        .step-number { width: 30px; height: 30px; border-radius: 50%; background: #ddd; display: flex; align-items: center; justify-content: center; margin-right: 8px; font-weight: bold; }
-        .step.active .step-number { background: #667eea; color: white; }
-        .step-line { width: 50px; height: 2px; background: #ddd; margin: 0 10px; }
-        .hidden { display: none; }
-        .info-box { background: #f8f9fa; border-left: 4px solid #667eea; padding: 15px; margin-bottom: 20px; border-radius: 0 8px 8px 0; }
-        .info-box h4 { color: #333; margin-bottom: 5px; }
-        .info-box p { color: #666; font-size: 14px; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        h1 {
+            text-align: center;
+            color: white;
+            margin-bottom: 30px;
+            font-size: 2.5em;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            margin-bottom: 20px;
+        }
+        
+        h2 {
+            color: #333;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #667eea;
+            padding-bottom: 10px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #555;
+            font-weight: 600;
+        }
+        
+        input, select {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+        
+        input:focus, select:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+        
+        .btn {
+            width: 100%;
+            padding: 15px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
+        }
+        
+        .servicio-item {
+            padding: 15px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .servicio-item:hover {
+            border-color: #667eea;
+            background: #f8f9ff;
+        }
+        
+        .servicio-item.selected {
+            border-color: #667eea;
+            background: #e8eaff;
+        }
+        
+        .servicio-nombre {
+            font-weight: 600;
+            color: #333;
+        }
+        
+        .servicio-detalle {
+            color: #777;
+            font-size: 14px;
+            margin-top: 5px;
+        }
+        
+        .horario-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+        }
+        
+        .horario-btn {
+            padding: 12px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            background: white;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 14px;
+        }
+        
+        .horario-btn:hover:not(:disabled) {
+            border-color: #667eea;
+            background: #f8f9ff;
+        }
+        
+        .horario-btn.selected {
+            background: #667eea;
+            color: white;
+            border-color: #667eea;
+        }
+        
+        .horario-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+        
+        .mensaje {
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .mensaje-exito {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        
+        .mensaje-error {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+        
+        .tabs {
+            display: flex;
+            margin-bottom: 20px;
+        }
+        
+        .tab {
+            flex: 1;
+            padding: 15px;
+            background: #f0f0f0;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            transition: all 0.3s;
+        }
+        
+        .tab:first-child {
+            border-radius: 8px 0 0 8px;
+        }
+        
+        .tab:last-child {
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .tab.active {
+            background: #667eea;
+            color: white;
+        }
+        
+        .tab-content {
+            display: none;
+        }
+        
+        .tab-content.active {
+            display: block;
+        }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="header">
-            <h1>🏥 Consultorio Médico</h1>
-            <p>Reserva tu turno online</p>
-        </div>
+        <h1>📅 Turnero Online</h1>
         
-        <div class="steps">
-            <div class="step active" id="step1-indicator"><span class="step-number">1</span><span>Servicio</span></div>
-            <div class="step-line"></div>
-            <div class="step" id="step2-indicator"><span class="step-number">2</span><span>Fecha/Hora</span></div>
-            <div class="step-line"></div>
-            <div class="step" id="step3-indicator"><span class="step-number">3</span><span>Datos</span></div>
-        </div>
-        
-        <?php
-        require_once 'config.php';
-        initDatabase();
-        
-        $mensaje = '';
-        $mensaje_tipo = '';
-        
-        if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['reservar'])) {
-            $conn = getDB();
-            
-            $stmt = $conn->prepare("SELECT id FROM turnos WHERE fecha = ? AND hora = ? AND estado != 'cancelado'");
-            $stmt->bind_param("ss", $_POST['fecha'], $_POST['hora']);
-            $stmt->execute();
-            $result = $stmt->get_result();
-            
-            if ($result->num_rows > 0) {
-                $mensaje = "El turno solicitado ya no está disponible. Por favor, elegí otro horario.";
-                $mensaje_tipo = 'mensaje-error';
-            } else {
-                $stmt = $conn->prepare("INSERT INTO pacientes (nombre, telefono, email) VALUES (?, ?, ?)");
-                $stmt->bind_param("sss", $_POST['nombre'], $_POST['telefono'], $_POST['email']);
-                $stmt->execute();
-                $paciente_id = $conn->insert_id;
-                
-                $result = $conn->query("SELECT duracion, nombre FROM servicios WHERE id = " . intval($_POST['servicio_id']));
-                $servicio = $result->fetch_assoc();
-                $duracion = $servicio['duracion'] ?? 30;
-                
-                $stmt = $conn->prepare("INSERT INTO turnos (paciente_id, servicio_id, fecha, hora, duracion, motivo) VALUES (?, ?, ?, ?, ?, ?)");
-                $stmt->bind_param("iissis", $paciente_id, $_POST['servicio_id'], $_POST['fecha'], $_POST['hora'], $duracion, $_POST['motivo']);
-                
-                if ($stmt->execute()) {
-                    $turno_id = $conn->insert_id;
-                    
-                    $google = new GoogleCalendar();
-                    if ($google->isAuthenticated()) {
-                        $paciente = ['nombre' => $_POST['nombre'], 'telefono' => $_POST['telefono']];
-                        $event = $google->crearEvento(
-                            ['fecha' => $_POST['fecha'], 'hora' => $_POST['hora'], 'duracion' => $duracion, 'motivo' => $_POST['motivo']],
-                            $paciente,
-                            $servicio
-                        );
-                        if ($event) {
-                            $stmt = $conn->prepare("UPDATE turnos SET google_event_id = ? WHERE id = ?");
-                            $event_id = $event->getId();
-                            $stmt->bind_param("si", $event_id, $turno_id);
-                            $stmt->execute();
-                        }
-                    }
-                    
-                    $mensaje = "✅ Turno reservado exitosamente! Te enviaremos un recordatorio 24 horas antes.";
-                    $mensaje_tipo = 'mensaje-exito';
-                } else {
-                    $mensaje = "Error al reservar el turno. Por favor, intentá nuevamente.";
-                    $mensaje_tipo = 'mensaje-error';
-                }
-            }
-            $conn->close();
-        }
-        ?>
-        
-        <?php if ($mensaje): ?>
-            <div class="mensaje <?php echo $mensaje_tipo; ?>"><?php echo $mensaje; ?></div>
+        <?php if (isset($mensaje)): ?>
+            <div class="mensaje <?php echo $mensaje_tipo; ?>">
+                <?php echo $mensaje; ?>
+            </div>
         <?php endif; ?>
         
-        <form method="POST" id="form-turno">
-            <div class="card" id="step1">
-                <h2>📋 Seleccionar Servicio</h2>
-                <input type="hidden" name="servicio_id" id="servicio_id" required>
-                <div id="lista-servicios">
-                    <?php
-                    $conn = getDB();
-                    $result = $conn->query("SELECT * FROM servicios ORDER BY nombre");
-                    while ($servicio = $result->fetch_assoc()): ?>
-                        <div class="servicio-item" onclick="selectServicio(<?php echo $servicio['id']; ?>, <?php echo $servicio['duracion']; ?>, '<?php echo $servicio['color']; ?>')">
-                            <div class="servicio-info">
-                                <h3><?php echo htmlspecialchars($servicio['nombre']); ?></h3>
-                                <span>⏱️ <?php echo $servicio['duracion']; ?> minutos</span>
-                            </div>
-                            <div class="servicio-color" style="background: <?php echo $servicio['color']; ?>"></div>
-                        </div>
-                    <?php endwhile; $conn->close(); ?>
-                </div>
-                <button type="button" class="btn" onclick="nextStep(2)">Continuar →</button>
-            </div>
-            
-            <div class="card hidden" id="step2">
-                <h2>📅 Seleccionar Fecha y Hora</h2>
-                <input type="hidden" name="fecha" id="fecha" required>
-                <input type="hidden" name="hora" id="hora" required>
-                <div class="form-group">
-                    <label>Seleccioná un día:</label>
-                    <div id="calendar" class="calendar-grid"></div>
-                </div>
-                <div id="horarios-container" class="hidden">
-                    <label>Horarios disponibles:</label>
-                    <div id="horarios" class="horario-grid"></div>
-                </div>
-                <div style="display: flex; gap: 10px;">
-                    <button type="button" class="btn btn-secondary" onclick="nextStep(1)">← Atrás</button>
-                    <button type="button" class="btn" onclick="nextStep(3)">Continuar →</button>
-                </div>
-            </div>
-            
-            <div class="card hidden" id="step3">
-                <h2>👤 Datos del Paciente</h2>
-                <div class="info-box">
-                    <h4>📌 Resumen del turno:</h4>
-                    <p id="resumen-turno">Servicio: <span id="resumen-servicio">-</span> | Fecha: <span id="resumen-fecha">-</span> | Hora: <span id="resumen-hora">-</span></p>
-                </div>
-                <div class="form-group">
-                    <label for="nombre">Nombre completo *</label>
-                    <input type="text" id="nombre" name="nombre" required placeholder="Ingresá tu nombre">
-                </div>
-                <div class="form-group">
-                    <label for="telefono">Teléfono *</label>
-                    <input type="tel" id="telefono" name="telefono" required placeholder="Tu número de teléfono">
-                </div>
-                <div class="form-group">
-                    <label for="email">Email (opcional)</label>
-                    <input type="email" id="email" name="email" placeholder="Tu correo electrónico">
-                </div>
-                <div class="form-group">
-                    <label for="motivo">Motivo de la consulta (opcional)</label>
-                    <textarea id="motivo" name="motivo" rows="3" placeholder="Describí brevemente el motivo de tu consulta"></textarea>
-                </div>
-                <div style="display: flex; gap: 10px;">
-                    <button type="button" class="btn btn-secondary" onclick="nextStep(2)">← Atrás</button>
-                    <button type="submit" name="reservar" class="btn">✅ Confirmar Turno</button>
-                </div>
-            </div>
-        </form>
+        <div class="tabs">
+            <button class="tab active" onclick="switchTab('reservar')">Reservar Turno</button>
+            <button class="tab" onclick="switchTab('mis-turnos')">Mis Turnos</button>
+        </div>
         
-        <div class="card" style="text-align: center;">
-            <p style="color: #666;">¿Ya tenés un turno? <a href="consultar.php" style="color: #667eea;">Consultar mi turno</a></p>
+        <div id="reservar" class="tab-content active">
+            <div class="card">
+                <h2>Seleccionar Servicio</h2>
+                <form method="POST" id="form-turno">
+                    <input type="hidden" name="servicio_id" id="servicio_id" required>
+                    <input type="hidden" name="fecha" id="fecha" required>
+                    <input type="hidden" name="hora" id="hora" required>
+                    
+                    <div id="lista-servicios">
+                        <?php
+                        $conn = new mysqli($host, $user, $password, $database);
+                        $result = $conn->query("SELECT * FROM servicios");
+                        while ($servicio = $result->fetch_assoc()): ?>
+                            <div class="servicio-item" onclick="selectServicio(<?php echo $servicio['id']; ?>, '<?php echo $servicio['nombre']; ?>', <?php echo $servicio['duracion']; ?>, <?php echo $servicio['precio']; ?>)">
+                                <div class="servicio-nombre"><?php echo $servicio['nombre']; ?></div>
+                                <div class="servicio-detalle">Duración: <?php echo $servicio['duracion']; ?> min - $<?php echo number_format($servicio['precio'], 2); ?></div>
+                            </div>
+                        <?php endwhile; $conn->close(); ?>
+                    </div>
+            </div>
+            
+            <div class="card" id="step-fecha" style="display:none;">
+                <h2>Seleccionar Fecha</h2>
+                <div class="form-group">
+                    <label for="fecha-turno">Fecha:</label>
+                    <input type="date" id="fecha-turno" name="fecha-turno" min="<?php echo date('Y-m-d'); ?>" onchange="cargarHorarios()">
+                </div>
+                <div id="horarios"></div>
+            </div>
+            
+            <div class="card" id="step-datos" style="display:none;">
+                <h2>Datos del Cliente</h2>
+                <div class="form-group">
+                    <label for="nombre">Nombre completo:</label>
+                    <input type="text" id="nombre" name="nombre" required>
+                </div>
+                <div class="form-group">
+                    <label for="telefono">Teléfono:</label>
+                    <input type="tel" id="telefono" name="telefono" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email">
+                </div>
+                <button type="submit" name="reservar" class="btn">Confirmar Turno</button>
+            </div>
+        </div>
+        
+        <div id="mis-turnos" class="tab-content">
+            <div class="card">
+                <h2>Consultar Mi Turno</h2>
+                <form method="POST">
+                    <div class="form-group">
+                        <label for="buscar_telefono">Teléfono:</label>
+                        <input type="tel" id="buscar_telefono" name="telefono" required>
+                    </div>
+                    <button type="submit" name="buscar" class="btn">Buscar Turno</button>
+                </form>
+                
+                <?php
+                if (isset($_POST['buscar'])) {
+                    $conn = new mysqli($host, $user, $password, $database);
+                    $telefono = $_POST['telefono'];
+                    $result = $conn->query("SELECT t.*, s.nombre as servicio_nombre 
+                        FROM turnos t 
+                        LEFT JOIN servicios s ON t.servicio_id = s.id 
+                        WHERE t.cliente_telefono = '$telefono' 
+                        ORDER BY t.fecha DESC, t.hora DESC");
+                    
+                    if ($result->num_rows > 0) {
+                        echo "<h3 style='margin-top:20px;'>Tus turnos:</h3>";
+                        while ($turno = $result->fetch_assoc()) {
+                            $estado_color = $turno['estado'] == 'confirmado' ? 'green' : ($turno['estado'] == 'cancelado' ? 'red' : 'gray');
+                            echo "<div style='padding:15px; border:1px solid #ddd; margin:10px 0; border-radius:8px;'>";
+                            echo "<strong>{$turno['servicio_nombre']}</strong><br>";
+                            echo "Fecha: " . date('d/m/Y', strtotime($turno['fecha'])) . " a las {$turno['hora']}<br>";
+                            echo "Estado: <span style='color:$estado_color;font-weight:bold;'>{$turno['estado']}</span>";
+                            echo "</div>";
+                        }
+                    } else {
+                        echo "<p style='margin-top:20px;'>No se encontraron turnos con ese teléfono.</p>";
+                    }
+                    $conn->close();
+                }
+                ?>
+            </div>
         </div>
     </div>
     
     <script>
-        let currentStep = 1;
-        let selectedServicio = null;
-        let selectedDuracion = 30;
-        let selectedFecha = null;
-        let selectedHora = null;
+        let servicioSeleccionado = null;
+        let duracionServicio = 0;
         
-        const diasSemana = ['Dom', 'Lun', 'Mar', 'Mié', 'Jue', 'Vie', 'Sáb'];
-        const diasDisponibles = [1, 2, 3, 4, 5];
-        
-        function nextStep(step) {
-            if (step === 2 && !selectedServicio) { alert('Por favor, seleccioná un servicio'); return; }
-            if (step === 3 && (!selectedFecha || !selectedHora)) { alert('Por favor, seleccioná fecha y hora'); return; }
-            
-            if (step === 3) {
-                document.getElementById('resumen-fecha').textContent = formatFecha(selectedFecha);
-                document.getElementById('resumen-hora').textContent = selectedHora;
-            }
-            
-            for (let i = 1; i <= 3; i++) {
-                document.getElementById('step' + i).classList.add('hidden');
-                document.getElementById('step' + i + '-indicator').classList.remove('active');
-            }
-            document.getElementById('step' + step).classList.remove('hidden');
-            document.getElementById('step' + step + '-indicator').classList.add('active');
-            
-            if (step === 2 && !document.getElementById('calendar').innerHTML) { generateCalendar(); }
-            currentStep = step;
+        function switchTab(tabId) {
+            document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+            document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+            document.getElementById(tabId).classList.add('active');
+            event.target.classList.add('active');
         }
         
-        function selectServicio(id, duracion, color) {
+        function selectServicio(id, nombre, duracion, precio) {
             document.querySelectorAll('.servicio-item').forEach(s => s.classList.remove('selected'));
             event.currentTarget.classList.add('selected');
-            selectedServicio = id;
-            selectedDuracion = duracion;
+            
+            servicioSeleccionado = id;
+            duracionServicio = duracion;
             document.getElementById('servicio_id').value = id;
-            const servicioEl = event.currentTarget.querySelector('h3');
-            document.getElementById('resumen-servicio').textContent = servicioEl.textContent;
+            document.getElementById('step-fecha').style.display = 'block';
+            document.getElementById('step-datos').style.display = 'none';
         }
         
-        function generateCalendar() {
-            const calendar = document.getElementById('calendar');
-            const today = new Date();
-            let html = '';
-            diasSemana.forEach(dia => { html += `<div class="calendar-header">${dia}</div>`; });
-            for (let i = 0; i < 28; i++) {
-                const date = new Date(today);
-                date.setDate(today.getDate() + i + 1);
-                const dayOfWeek = date.getDay();
-                const dateStr = date.toISOString().split('T')[0];
-                let classes = 'calendar-day';
-                if (!diasDisponibles.includes(dayOfWeek)) { classes += ' disabled'; }
-                html += `<div class="${classes}" onclick="selectDate('${dateStr}')" data-date="${dateStr}">${date.getDate()}</div>`;
-            }
-            calendar.innerHTML = html;
-        }
-        
-        function selectDate(dateStr) {
-            document.querySelectorAll('.calendar-day').forEach(d => d.classList.remove('selected'));
-            document.querySelector(`[data-date="${dateStr}"]`).classList.add('selected');
-            selectedFecha = dateStr;
-            document.getElementById('fecha').value = dateStr;
-            loadHorarios(dateStr);
-        }
-        
-        function loadHorarios(fecha) {
-            const horariosContainer = document.getElementById('horarios-container');
-            const horariosDiv = document.getElementById('horarios');
+        function cargarHorarios() {
+            const fecha = document.getElementById('fecha-turno').value;
+            if (!fecha) return;
+            
+            document.getElementById('fecha').value = fecha;
+            
+            // Generate available times
             const horarios = [];
-            for (let h = 9; h < 18; h++) {
-                horarios.push(`${h.toString().padStart(2, '0')}:00`);
-                horarios.push(`${h.toString().padStart(2, '0')}:30`);
+            for (let h = 9; h <= 18; h++) {
+                for (let m = 0; m < 60; m += duracionServicio) {
+                    if (h + m/60 <= 18) {
+                        let hora = h.toString().padStart(2, '0') + ':' + m.toString().padStart(2, '0');
+                        horarios.push(hora);
+                    }
+                }
             }
-            let html = '';
-            horarios.forEach(hora => { html += `<button type="button" class="horario-btn" onclick="selectHora('${hora}')">${hora}</button>`; });
-            horariosDiv.innerHTML = html;
-            horariosContainer.classList.remove('hidden');
+            
+            let html = '<div class="horario-grid">';
+            horarios.forEach(hora => {
+                html += `<button type="button" class="horario-btn" onclick="selectHora('${hora}')">${hora}</button>`;
+            });
+            html += '</div>';
+            
+            document.getElementById('horarios').innerHTML = html;
         }
         
         function selectHora(hora) {
             document.querySelectorAll('.horario-btn').forEach(b => b.classList.remove('selected'));
             event.target.classList.add('selected');
-            selectedHora = hora;
             document.getElementById('hora').value = hora;
-        }
-        
-        function formatFecha(fechaStr) {
-            const fecha = new Date(fechaStr + 'T00:00:00');
-            return fecha.toLocaleDateString('es-AR', { weekday: 'long', day: 'numeric', month: 'long' });
+            document.getElementById('step-datos').style.display = 'block';
         }
     </script>
 </body>
