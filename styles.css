@@ -335,8 +335,7 @@ button {
   font-weight: 700;
   color: var(--white);
   margin-bottom: 1.5rem;
-  -webkit-text-stroke: 1.5px #000;
-  text-shadow: 0 4px 10px rgba(#d97b6e);
+  -webkit-text-stroke: 1.5px #d97b6e;
 }
 .hero h1 .accent { color: var(--coral-light); }
 .hero-desc {
