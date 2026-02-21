@@ -1,0 +1,14 @@
+[build]
+  command = "npm install && npm run build"
+  publish = "."
+  functions = "netlify/functions"
+
+[build.environment]
+  NODE_VERSION = "18"
+
+# Variables de entorno (configurar en Netlify Dashboard)
+# GOOGLE_CLIENT_ID = "tu-client-id.apps.googleusercontent.com"
+# GOOGLE_CLIENT_SECRET = "tu-client-secret"
+# GOOGLE_REDIRECT_URI = "https://tu-sitio.netlify.app/.netlify/functions/callback"
+# GOOGLE_CALENDAR_ID = "tu-email@gmail.com"
+# GOOGLE_TOKEN = '{"access_token": "...", "refresh_token": "..."}'
